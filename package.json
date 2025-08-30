@@ -1,0 +1,51 @@
+{
+  "name": "healthconnect-platform",
+  "version": "1.0.0",
+  "description": "Mobile Health Clinics Platform - Bridging healthcare accessibility gaps in remote and underserved communities",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "test": "echo \"Testing functionality...\" && exit 0",
+    "build": "echo \"Static site - no build process needed\" && exit 0",
+    "deploy": "netlify deploy --prod --dir .",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "healthcare",
+    "mobile-clinics",
+    "east-africa",
+    "telemedicine",
+    "health-technology",
+    "community-health",
+    "responsive-design",
+    "javascript",
+    "html5",
+    "css3"
+  ],
+  "author": {
+    "name": "Melkamu Wako",
+    "email": "melkamu.wako@astu.edu.et",
+    "url": "https://melkamuwako27.netlify.app/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melkamuwako27/healthconnect-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/melkamuwako27/healthconnect-platform/issues"
+  },
+  "homepage": "https://healthconnect-mobile.netlify.app",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mobile Health Clinics - Bridging healthcare accessibility gaps in remote communities">
+    <title>Mobile Health Clinics - Healthcare for All</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>HealthConnect</span>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clinic-locations.html" class="nav-link">Clinic Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-resources.html" class="nav-link">Health Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="appointment-booking.html" class="nav-link">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Healthcare for <span class="highlight">Every Community</span>
+                    </h1>
+                    <p class="hero-description">
+                        Connecting remote communities with mobile health clinics. Track clinic locations, 
+                        book appointments, and access vital health resources—all in one platform.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="clinic-locations.html" class="btn btn-primary">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Find Clinics Near You
+                        </a>
+                        <a href="appointment-booking.html" class="btn btn-secondary">
+                            <i class="fas fa-calendar-plus"></i>
+                            Book Appointment
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-illustration">
+                        <i class="fas fa-truck-medical"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="15000">0</h3>
+                            <p class="stat-label">People Served</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-truck-medical"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="25">0</h3>
+                            <p class="stat-label">Active Clinics</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="120">0</h3>
+                            <p class="stat-label">Communities Reached</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="8500">0</h3>
+                            <p class="stat-label">Appointments Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Clinics Section -->
+        <section class="upcoming-clinics">
+            <div class="container">
+                <h2 class="section-title">Upcoming Mobile Clinic Visits</h2>
+                <p class="section-subtitle">Don't miss these scheduled healthcare visits in your area</p>
+                
+                <div class="clinic-cards">
+                    <div class="clinic-card">
+                        <div class="clinic-date">
+                            <span class="day">15</span>
+                            <span class="month">Sep</span>
+                        </div>
+                        <div class="clinic-info">
+                            <h3 class="clinic-location">Kibera Community Center</h3>
+                            <p class="clinic-address">Nairobi, Kenya</p>
+                            <p class="clinic-time">
+                                <i class="fas fa-clock"></i>
+                                9:00 AM - 4:00 PM
+                            </p>
+                            <div class="clinic-services">
+                                <span class="service-tag">General Checkup</span>
+                                <span class="service-tag">Vaccinations</span>
+                                <span class="service-tag">Maternal Care</span>
+                            </div>
+                        </div>
+                        <div class="clinic-action">
+                            <a href="appointment-booking.html" class="btn btn-outline">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="clinic-card">
+                        <div class="clinic-date">
+                            <span class="day">18</span>
+                            <span class="month">Sep</span>
+                        </div>
+                        <div class="clinic-info">
+                            <h3 class="clinic-location">Masai Mara Village Hall</h3>
+                            <p class="clinic-address">Narok County, Kenya</p>
+                            <p class="clinic-time">
+                                <i class="fas fa-clock"></i>
+                                8:00 AM - 3:00 PM
+                            </p>
+                            <div class="clinic-services">
+                                <span class="service-tag">Health Screening</span>
+                                <span class="service-tag">Child Care</span>
+                                <span class="service-tag">First Aid</span>
+                            </div>
+                        </div>
+                        <div class="clinic-action">
+                            <a href="appointment-booking.html" class="btn btn-outline">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="clinic-card">
+                        <div class="clinic-date">
+                            <span class="day">22</span>
+                            <span class="month">Sep</span>
+                        </div>
+                        <div class="clinic-info">
+                            <h3 class="clinic-location">Turkana Health Post</h3>
+                            <p class="clinic-address">Turkana County, Kenya</p>
+                            <p class="clinic-time">
+                                <i class="fas fa-clock"></i>
+                                10:00 AM - 5:00 PM
+                            </p>
+                            <div class="clinic-services">
+                                <span class="service-tag">Emergency Care</span>
+                                <span class="service-tag">Nutrition</span>
+                                <span class="service-tag">Mental Health</span>
+                            </div>
+                        </div>
+                        <div class="clinic-action">
+                            <a href="appointment-booking.html" class="btn btn-outline">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view-all-clinics">
+                    <a href="clinic-locations.html" class="btn btn-primary">
+                        <i class="fas fa-map"></i>
+                        View All Clinic Locations
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">How HealthConnect Works</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search-location"></i>
+                        </div>
+                        <h3 class="feature-title">Find Nearby Clinics</h3>
+                        <p class="feature-description">
+                            Use our interactive map to locate mobile health clinics in your area 
+                            and view their real-time schedules.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="feature-title">Book Appointments</h3>
+                        <p class="feature-description">
+                            Schedule your healthcare appointments online and receive confirmation 
+                            with detailed visit information.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-medical"></i>
+                        </div>
+                        <h3 class="feature-title">Access Health Resources</h3>
+                        <p class="feature-description">
+                            Browse comprehensive health education materials, prevention tips, 
+                            and emergency care guides.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Community Stories</h2>
+                <p class="section-subtitle">Real stories from people who've benefited from mobile health clinics</p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">
+                                "Thanks to HealthConnect, I was able to find a mobile clinic near my village 
+                                and get my daughter vaccinated on time. The platform made it so easy to track 
+                                when the clinic would visit our area."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Sarah Wanjiku</h4>
+                                <p class="author-location">Kiambu County, Kenya</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">
+                                "The health resources section helped me understand malaria prevention better. 
+                                When our local clinic visited, I was prepared with the right questions to ask 
+                                the healthcare workers."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">James Kipchoge</h4>
+                                <p class="author-location">Rift Valley, Kenya</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">
+                                "As a community health worker, this platform helps me coordinate with mobile 
+                                clinics and inform my community about upcoming visits. It's been invaluable 
+                                for our rural health initiatives."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Mary Nyong'o</h4>
+                                <p class="author-location">Kisumu County, Kenya</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Showcase Section -->
+        <section class="developer-showcase">
+            <div class="container">
+                <div class="showcase-content">
+                    <div class="showcase-text">
+                        <h2 class="section-title">About the Developer</h2>
+                        <p class="showcase-description">
+                            HealthConnect was developed by <strong>Melkamu Wako</strong>, a passionate Computer Science & Engineering 
+                            student at ASTU (Adama Science and Technology University), Ethiopia. This platform represents 
+                            a commitment to using technology for social good and addressing healthcare accessibility challenges 
+                            in East Africa.
+                        </p>
+                        <div class="developer-skills">
+                            <h3>Technologies Used:</h3>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Leaflet.js</span>
+                                <span class="tech-tag">Responsive Design</span>
+                                <span class="tech-tag">PWA Features</span>
+                            </div>
+                        </div>
+                        <div class="developer-actions">
+                            <a href="https://melkamuwako27.netlify.app/" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-user"></i>
+                                View Portfolio
+                            </a>
+                            <a href="https://github.com/melkamuwako27" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i>
+                                GitHub Profile
+                            </a>
+                        </div>
+                    </div>
+                    <div class="showcase-image">
+                        <div class="developer-card">
+                            <div class="developer-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="developer-info">
+                                <h4>Melkamu Wako</h4>
+                                <p>Full-Stack Developer</p>
+                                <p>Computer Science Student</p>
+                                <div class="developer-badges">
+                                    <span class="badge">React</span>
+                                    <span class="badge">Node.js</span>
+                                    <span class="badge">Python</span>
+                                    <span class="badge">Java</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Banner -->
+        <section class="emergency-banner">
+            <div class="container">
+                <div class="emergency-content">
+                    <div class="emergency-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="emergency-text">
+                        <h3>Medical Emergency?</h3>
+                        <p>For life-threatening emergencies, call 911 or your local emergency number immediately.</p>
+                    </div>
+                    <div class="emergency-action">
+                        <a href="contact.html" class="btn btn-emergency">Emergency Contacts</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Bridging healthcare accessibility gaps in remote and underserved communities 
+                        through technology and mobile health solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/melkamu.wako" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/melkamu_wako" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/melkamu-wako" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/melkamuwako27" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="clinic-locations.html">Find Clinics</a></li>
+                        <li><a href="health-resources.html">Health Resources</a></li>
+                        <li><a href="appointment-booking.html">Book Appointment</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Health Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="health-resources.html#prevention">Disease Prevention</a></li>
+                        <li><a href="health-resources.html#maternal">Maternal Health</a></li>
+                        <li><a href="health-resources.html#child">Child Health</a></li>
+                        <li><a href="health-resources.html#emergency">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Get Updates</h4>
+                    <p>Stay informed about mobile clinic schedules and health tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 HealthConnect. All rights reserved. | 
+                       <a href="#privacy">Privacy Policy</a> | 
+                       <a href="#terms">Terms of Service</a>
+                    </p>
+                    <div class="developer-credit">
+                        <p>Developed by <a href="https://melkamuwako27.netlify.app/" target="_blank" class="developer-link">
+                            <i class="fas fa-code"></i> Melkamu Wako
+                        </a> - Computer Science Student at ASTU</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

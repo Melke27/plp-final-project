@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive health resources, education materials, and prevention guides">
+    <title>Health Resources - HealthConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>HealthConnect</span>
+                </div>
+                
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clinic-locations.html" class="nav-link">Clinic Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-resources.html" class="nav-link active">Health Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="appointment-booking.html" class="nav-link">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Health Resources & Education</h1>
+                <p class="page-description">
+                    Access comprehensive health information, prevention guides, and educational materials 
+                    to help you and your community stay healthy and informed.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="health-search" placeholder="Search health topics, symptoms, or conditions..." />
+                        <button class="search-btn" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="popular-searches">
+                        <span class="popular-label">Popular searches:</span>
+                        <button class="search-tag" data-search="malaria">Malaria Prevention</button>
+                        <button class="search-tag" data-search="diabetes">Diabetes Management</button>
+                        <button class="search-tag" data-search="pregnancy">Pregnancy Care</button>
+                        <button class="search-tag" data-search="vaccination">Child Vaccinations</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Categories -->
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">Health Categories</h2>
+                <div class="categories-grid">
+                    
+                    <!-- Disease Prevention -->
+                    <div class="category-card" id="prevention">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="category-title">Disease Prevention</h3>
+                            <button class="expand-btn" data-target="prevention-content">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="category-content" id="prevention-content">
+                            <div class="health-articles">
+                                <article class="health-article">
+                                    <h4>Malaria Prevention</h4>
+                                    <p>Learn how to protect yourself and your family from malaria through proper use of mosquito nets, repellents, and environmental management.</p>
+                                    <ul class="health-tips">
+                                        <li>Sleep under insecticide-treated nets every night</li>
+                                        <li>Remove standing water around your home</li>
+                                        <li>Use mosquito repellent during peak hours (dusk and dawn)</li>
+                                        <li>Wear long-sleeved clothing when outdoors</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Prevention</span>
+                                        <span class="tag">Mosquito Control</span>
+                                    </div>
+                                </article>
+
+                                <article class="health-article">
+                                    <h4>Water Sanitation & Hygiene</h4>
+                                    <p>Safe water practices and proper hygiene are essential for preventing waterborne diseases like cholera and typhoid.</p>
+                                    <ul class="health-tips">
+                                        <li>Boil water for at least 1 minute before drinking</li>
+                                        <li>Wash hands with soap for 20 seconds regularly</li>
+                                        <li>Use proper sanitation facilities</li>
+                                        <li>Store food in clean, covered containers</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Hygiene</span>
+                                        <span class="tag">Water Safety</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Maternal Health -->
+                    <div class="category-card" id="maternal">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <h3 class="category-title">Maternal Health</h3>
+                            <button class="expand-btn" data-target="maternal-content">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="category-content" id="maternal-content">
+                            <div class="health-articles">
+                                <article class="health-article">
+                                    <h4>Prenatal Care Essentials</h4>
+                                    <p>Important steps for maintaining health during pregnancy and ensuring safe delivery.</p>
+                                    <ul class="health-tips">
+                                        <li>Attend regular prenatal checkups</li>
+                                        <li>Take folic acid and iron supplements</li>
+                                        <li>Eat nutritious foods rich in vitamins</li>
+                                        <li>Avoid alcohol, tobacco, and harmful substances</li>
+                                        <li>Get adequate rest and moderate exercise</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Pregnancy</span>
+                                        <span class="tag">Nutrition</span>
+                                    </div>
+                                </article>
+
+                                <article class="health-article">
+                                    <h4>Warning Signs During Pregnancy</h4>
+                                    <p>Know when to seek immediate medical attention during pregnancy.</p>
+                                    <ul class="health-tips">
+                                        <li>Severe headaches or vision changes</li>
+                                        <li>Heavy bleeding or fluid leakage</li>
+                                        <li>Severe abdominal pain</li>
+                                        <li>Decreased fetal movement</li>
+                                        <li>High fever or persistent vomiting</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Emergency</span>
+                                        <span class="tag">Warning Signs</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Child Health -->
+                    <div class="category-card" id="child">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h3 class="category-title">Child Health</h3>
+                            <button class="expand-btn" data-target="child-content">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="category-content" id="child-content">
+                            <div class="health-articles">
+                                <article class="health-article">
+                                    <h4>Childhood Vaccination Schedule</h4>
+                                    <p>Essential vaccines to protect your child from preventable diseases.</p>
+                                    <div class="vaccination-schedule">
+                                        <div class="vaccine-item">
+                                            <strong>Birth:</strong> BCG, Polio, Hepatitis B
+                                        </div>
+                                        <div class="vaccine-item">
+                                            <strong>6 weeks:</strong> DPT, Polio, Pneumococcal
+                                        </div>
+                                        <div class="vaccine-item">
+                                            <strong>10 weeks:</strong> DPT, Polio, Pneumococcal
+                                        </div>
+                                        <div class="vaccine-item">
+                                            <strong>14 weeks:</strong> DPT, Polio, Pneumococcal
+                                        </div>
+                                        <div class="vaccine-item">
+                                            <strong>9 months:</strong> Measles, Yellow Fever
+                                        </div>
+                                    </div>
+                                    <div class="article-tags">
+                                        <span class="tag">Vaccinations</span>
+                                        <span class="tag">Prevention</span>
+                                    </div>
+                                </article>
+
+                                <article class="health-article">
+                                    <h4>Recognizing Childhood Illnesses</h4>
+                                    <p>Common signs and symptoms that require medical attention in children.</p>
+                                    <ul class="health-tips">
+                                        <li>High fever (over 38°C/100.4°F)</li>
+                                        <li>Difficulty breathing or rapid breathing</li>
+                                        <li>Persistent diarrhea or vomiting</li>
+                                        <li>Unusual drowsiness or irritability</li>
+                                        <li>Skin rashes or unusual discoloration</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Symptoms</span>
+                                        <span class="tag">Emergency</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Care -->
+                    <div class="category-card" id="emergency">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-ambulance"></i>
+                            </div>
+                            <h3 class="category-title">Emergency Care</h3>
+                            <button class="expand-btn" data-target="emergency-content">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="category-content" id="emergency-content">
+                            <div class="health-articles">
+                                <article class="health-article">
+                                    <h4>Basic First Aid</h4>
+                                    <p>Essential first aid skills that could save a life in emergency situations.</p>
+                                    <div class="first-aid-steps">
+                                        <div class="step">
+                                            <strong>1. Check for Responsiveness:</strong> Tap shoulders and shout "Are you okay?"
+                                        </div>
+                                        <div class="step">
+                                            <strong>2. Call for Help:</strong> Contact emergency services immediately
+                                        </div>
+                                        <div class="step">
+                                            <strong>3. Check Breathing:</strong> Look, listen, and feel for normal breathing
+                                        </div>
+                                        <div class="step">
+                                            <strong>4. Control Bleeding:</strong> Apply direct pressure with clean cloth
+                                        </div>
+                                    </div>
+                                    <div class="article-tags">
+                                        <span class="tag">First Aid</span>
+                                        <span class="tag">Emergency</span>
+                                    </div>
+                                </article>
+
+                                <article class="health-article">
+                                    <h4>When to Seek Emergency Care</h4>
+                                    <p>Critical signs that require immediate medical attention.</p>
+                                    <ul class="health-tips">
+                                        <li>Chest pain or difficulty breathing</li>
+                                        <li>Severe bleeding that won't stop</li>
+                                        <li>Loss of consciousness or confusion</li>
+                                        <li>Severe burns or injuries</li>
+                                        <li>Signs of stroke (facial drooping, arm weakness, speech difficulty)</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Emergency Signs</span>
+                                        <span class="tag">Critical Care</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nutrition & Wellness -->
+                    <div class="category-card" id="nutrition">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <h3 class="category-title">Nutrition & Wellness</h3>
+                            <button class="expand-btn" data-target="nutrition-content">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="category-content" id="nutrition-content">
+                            <div class="health-articles">
+                                <article class="health-article">
+                                    <h4>Balanced Diet Essentials</h4>
+                                    <p>Key components of a healthy diet for optimal health and disease prevention.</p>
+                                    <ul class="health-tips">
+                                        <li>Include fruits and vegetables in every meal</li>
+                                        <li>Choose whole grains over refined grains</li>
+                                        <li>Include protein sources like beans, fish, and lean meat</li>
+                                        <li>Limit processed foods and sugary drinks</li>
+                                        <li>Drink plenty of clean, safe water daily</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Nutrition</span>
+                                        <span class="tag">Prevention</span>
+                                    </div>
+                                </article>
+
+                                <article class="health-article">
+                                    <h4>Managing Diabetes</h4>
+                                    <p>Essential information for managing diabetes and preventing complications.</p>
+                                    <ul class="health-tips">
+                                        <li>Monitor blood sugar levels regularly</li>
+                                        <li>Follow prescribed medication schedules</li>
+                                        <li>Maintain a consistent eating schedule</li>
+                                        <li>Exercise regularly as recommended</li>
+                                        <li>Attend regular medical checkups</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Chronic Disease</span>
+                                        <span class="tag">Management</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mental Health -->
+                    <div class="category-card" id="mental">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="category-title">Mental Health</h3>
+                            <button class="expand-btn" data-target="mental-content">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="category-content" id="mental-content">
+                            <div class="health-articles">
+                                <article class="health-article">
+                                    <h4>Recognizing Mental Health Issues</h4>
+                                    <p>Understanding signs of mental health challenges and when to seek help.</p>
+                                    <ul class="health-tips">
+                                        <li>Persistent sadness or anxiety lasting weeks</li>
+                                        <li>Loss of interest in activities once enjoyed</li>
+                                        <li>Significant changes in sleep or appetite</li>
+                                        <li>Difficulty concentrating or making decisions</li>
+                                        <li>Thoughts of self-harm or suicide</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Mental Health</span>
+                                        <span class="tag">Warning Signs</span>
+                                    </div>
+                                </article>
+
+                                <article class="health-article">
+                                    <h4>Stress Management Techniques</h4>
+                                    <p>Simple, effective ways to manage stress and improve mental wellbeing.</p>
+                                    <ul class="health-tips">
+                                        <li>Practice deep breathing exercises daily</li>
+                                        <li>Maintain regular physical activity</li>
+                                        <li>Connect with family and friends regularly</li>
+                                        <li>Establish healthy sleep routines</li>
+                                        <li>Seek professional help when needed</li>
+                                    </ul>
+                                    <div class="article-tags">
+                                        <span class="tag">Stress Management</span>
+                                        <span class="tag">Wellness</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Health Tools -->
+        <section class="health-tools-section">
+            <div class="container">
+                <h2 class="section-title">Interactive Health Tools</h2>
+                <div class="tools-grid">
+                    
+                    <!-- BMI Calculator -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="fas fa-calculator"></i>
+                            <h3>BMI Calculator</h3>
+                        </div>
+                        <div class="tool-content">
+                            <p>Calculate your Body Mass Index to assess if you're at a healthy weight.</p>
+                            <div class="calculator-form">
+                                <div class="input-group">
+                                    <label for="height">Height (cm):</label>
+                                    <input type="number" id="height" placeholder="170">
+                                </div>
+                                <div class="input-group">
+                                    <label for="weight">Weight (kg):</label>
+                                    <input type="number" id="weight" placeholder="70">
+                                </div>
+                                <button class="btn btn-primary" onclick="calculateBMI()">Calculate BMI</button>
+                                <div id="bmi-result" class="calculator-result"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Symptom Checker -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="fas fa-clipboard-check"></i>
+                            <h3>Symptom Checker</h3>
+                        </div>
+                        <div class="tool-content">
+                            <p>Check your symptoms and get guidance on whether to seek medical care.</p>
+                            <div class="symptom-form">
+                                <div class="symptom-checklist">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="symptom-checkbox" data-severity="mild">
+                                        <span>Headache</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="symptom-checkbox" data-severity="moderate">
+                                        <span>Fever</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="symptom-checkbox" data-severity="severe">
+                                        <span>Difficulty breathing</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="symptom-checkbox" data-severity="mild">
+                                        <span>Fatigue</span>
+                                    </label>
+                                </div>
+                                <button class="btn btn-primary" onclick="checkSymptoms()">Check Symptoms</button>
+                                <div id="symptom-result" class="calculator-result"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Health Tips Generator -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Daily Health Tip</h3>
+                        </div>
+                        <div class="tool-content">
+                            <p>Get a random health tip to improve your daily wellness routine.</p>
+                            <div id="daily-tip" class="daily-tip">
+                                <p>"Regular handwashing with soap for 20 seconds can prevent up to 80% of infectious diseases."</p>
+                            </div>
+                            <button class="btn btn-primary" onclick="generateHealthTip()">Get New Tip</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Resources -->
+        <section class="featured-resources">
+            <div class="container">
+                <h2 class="section-title">Featured Health Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3 class="resource-title">WHO Health Guidelines</h3>
+                        <p class="resource-description">
+                            Official health guidelines and recommendations from the World Health Organization.
+                        </p>
+                        <a href="#" class="btn btn-outline">Download PDF</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="resource-title">Health Education Videos</h3>
+                        <p class="resource-description">
+                            Watch educational videos on health topics, prevention techniques, and care instructions.
+                        </p>
+                        <a href="#" class="btn btn-outline">Watch Videos</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="resource-title">Emergency Hotlines</h3>
+                        <p class="resource-description">
+                            Quick access to emergency contact numbers and health helplines in your region.
+                        </p>
+                        <a href="contact.html" class="btn btn-outline">View Contacts</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Bridging healthcare accessibility gaps in remote and underserved communities 
+                        through technology and mobile health solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="clinic-locations.html">Find Clinics</a></li>
+                        <li><a href="health-resources.html">Health Resources</a></li>
+                        <li><a href="appointment-booking.html">Book Appointment</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Health Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="health-resources.html#prevention">Disease Prevention</a></li>
+                        <li><a href="health-resources.html#maternal">Maternal Health</a></li>
+                        <li><a href="health-resources.html#child">Child Health</a></li>
+                        <li><a href="health-resources.html#emergency">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Get Updates</h4>
+                    <p>Stay informed about mobile clinic schedules and health tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthConnect. All rights reserved. | 
+                   <a href="#privacy">Privacy Policy</a> | 
+                   <a href="#terms">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/health-tools.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

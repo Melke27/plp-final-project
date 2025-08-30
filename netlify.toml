@@ -1,0 +1,66 @@
+[build]
+  # No build command needed for static site
+  publish = "."
+  
+[build.environment]
+  NODE_VERSION = "18"
+
+# Form handling
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Form submissions (for contact forms)
+[forms]
+  contact = "/contact.html"
+
+# Plugin configuration
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+# Environment variables (add these in Netlify dashboard)
+[context.production.environment]
+  SITE_URL = "https://healthconnect-mobile.netlify.app"
+  DEVELOPER_PORTFOLIO = "https://melkamuwako27.netlify.app"
+
+[context.deploy-preview.environment]
+  SITE_URL = "$DEPLOY_PRIME_URL"
+
+# Performance optimizations
+[build.processing.images]
+  compress = true

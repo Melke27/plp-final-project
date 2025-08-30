@@ -1,0 +1,37 @@
+# Netlify Redirects for HealthConnect Platform
+
+# SPA redirects for client-side routing
+/clinic-locations /clinic-locations.html 200
+/health-resources /health-resources.html 200
+/appointment-booking /appointment-booking.html 200
+/partner-hospitals /partner-hospitals.html 200
+/contact /contact.html 200
+
+# Handle booking with parameters
+/book /appointment-booking.html 200
+/book/* /appointment-booking.html 200
+
+# API-like endpoints (future backend integration)
+/api/* /api/:splat 404
+
+# Handle 404 errors
+/* /index.html 404
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: http:; connect-src 'self' https:
+
+# Caching headers for static assets
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Force HTTPS
+http://healthconnect-mobile.netlify.app/* https://healthconnect-mobile.netlify.app/:splat 301!

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact HealthConnect for support, questions, or emergency assistance">
+    <title>Contact & Support - HealthConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>HealthConnect</span>
+                </div>
+                
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clinic-locations.html" class="nav-link">Clinic Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-resources.html" class="nav-link">Health Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="appointment-booking.html" class="nav-link">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Contact & Support</h1>
+                <p class="page-description">
+                    Get in touch with our team for support, questions, or to request mobile clinic services 
+                    for your community. We're here to help 24/7.
+                </p>
+            </div>
+        </section>
+
+        <!-- Emergency Contacts -->
+        <section class="emergency-contacts">
+            <div class="container">
+                <div class="emergency-header">
+                    <h2 class="section-title">Emergency Contacts</h2>
+                    <p class="emergency-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        For life-threatening emergencies, call these numbers immediately
+                    </p>
+                </div>
+                
+                <div class="emergency-grid">
+                    <div class="emergency-card">
+                        <div class="emergency-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <h3>Emergency Services</h3>
+                        <p class="emergency-number">
+                            <a href="tel:911">911</a>
+                        </p>
+                        <p>General emergency services</p>
+                    </div>
+
+                    <div class="emergency-card">
+                        <div class="emergency-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Kenya Emergency</h3>
+                        <p class="emergency-number">
+                            <a href="tel:+254999">999</a>
+                        </p>
+                        <p>National emergency hotline</p>
+                    </div>
+
+                    <div class="emergency-card">
+                        <div class="emergency-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Health Emergency</h3>
+                        <p class="emergency-number">
+                            <a href="tel:+254719000000">+254 719 000 000</a>
+                        </p>
+                        <p>24/7 health emergency support</p>
+                    </div>
+
+                    <div class="emergency-card">
+                        <div class="emergency-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Mental Health Crisis</h3>
+                        <p class="emergency-number">
+                            <a href="tel:+254722000000">+254 722 000 000</a>
+                        </p>
+                        <p>Mental health crisis support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Methods -->
+        <section class="contact-methods">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-grid">
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h3 class="contact-title">Send us a Message</h3>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label">
+                                        <i class="fas fa-user"></i>
+                                        Full Name *
+                                    </label>
+                                    <input type="text" id="contact-name" name="name" class="form-input" required>
+                                    <span class="error-message"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label">
+                                        <i class="fas fa-envelope"></i>
+                                        Email Address *
+                                    </label>
+                                    <input type="email" id="contact-email" name="email" class="form-input" required>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-phone" class="form-label">
+                                    <i class="fas fa-phone"></i>
+                                    Phone Number
+                                </label>
+                                <input type="tel" id="contact-phone" name="phone" class="form-input">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inquiry-type" class="form-label">
+                                    <i class="fas fa-tags"></i>
+                                    Inquiry Type *
+                                </label>
+                                <select id="inquiry-type" name="inquiryType" class="form-select" required>
+                                    <option value="">Select inquiry type</option>
+                                    <option value="general">General Information</option>
+                                    <option value="booking">Booking Assistance</option>
+                                    <option value="clinic-request">Request Mobile Clinic</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="feedback">Feedback or Complaint</option>
+                                    <option value="partnership">Partnership Opportunities</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message" class="form-label">
+                                    <i class="fas fa-comment"></i>
+                                    Message *
+                                </label>
+                                <textarea id="contact-message" name="message" class="form-textarea" 
+                                         placeholder="Please provide details about your inquiry..." required></textarea>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-group">
+                                    <input type="checkbox" id="contact-updates" name="updates">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-text">I would like to receive updates about mobile clinic schedules</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+
+                        <!-- Success Message -->
+                        <div id="contact-success" class="success-message" style="display: none;">
+                            <div class="success-content">
+                                <i class="fas fa-check-circle"></i>
+                                <h3>Message Sent Successfully!</h3>
+                                <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h3 class="contact-title">Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Main Office</h4>
+                                <p>HealthConnect Headquarters<br>
+                                   P.O. Box 12345-00100<br>
+                                   Nairobi, Kenya</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone Support</h4>
+                                <p><a href="tel:+254700000000">+254 700 000 000</a><br>
+                                   Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                   Saturday: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Support</h4>
+                                <p><a href="mailto:support@healthconnect.co.ke">support@healthconnect.co.ke</a><br>
+                                   Response within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Live Chat</h4>
+                                <p>Available 24/7 for immediate assistance</p>
+                                <button class="btn btn-outline" onclick="openChat()">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">
+                            <i class="fas fa-calendar-check"></i>
+                            Appointment Booking
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How do I book an appointment with a mobile clinic?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can book an appointment through our online booking system by visiting the "Book Appointment" page. Simply fill out your personal information, select the service you need, choose a clinic location and time, then confirm your booking. You'll receive a confirmation email within 24 hours.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Can I cancel or reschedule my appointment?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, you can cancel or reschedule your appointment by calling our support line at +254 700 000 000 or using the live chat feature. Please provide at least 24 hours notice for cancellations to allow other patients to use the time slot.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What should I bring to my appointment?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Please bring: valid identification, any previous medical records, a list of current medications, and insurance information if applicable. For child appointments, bring the child's vaccination card if available.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">
+                            <i class="fas fa-truck-medical"></i>
+                            Mobile Clinic Services
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What services do mobile clinics provide?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Mobile clinics provide a range of services including general checkups, vaccinations, maternal care, child health services, emergency care, mental health support, and nutrition counseling. Specific services vary by clinic and location.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How often do mobile clinics visit each location?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Mobile clinic schedules vary by location and community needs. Some areas receive weekly visits, while others may have monthly or bi-monthly schedules. Check our clinic locations page for specific schedules in your area.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Are the services free?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Many basic health services are provided free of charge or at subsidized rates. Some specialized services may have minimal fees. Payment options include cash, mobile money, and health insurance where applicable.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Locations & Coverage
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How can I request a mobile clinic for my community?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Community leaders or health coordinators can request mobile clinic services by filling out our contact form with "Request Mobile Clinic" as the inquiry type, or by calling our support line. We evaluate requests based on community need, accessibility, and resource availability.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Which areas do you currently serve?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We currently serve rural and underserved communities across Kenya, with active clinics in Nairobi, Kiambu, Turkana, Narok, and Kisumu counties. We're continuously expanding our coverage to reach more communities in need.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">
+                            <i class="fas fa-laptop"></i>
+                            Technical Support
+                        </h3>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>I'm having trouble using the website. Who can help?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our technical support team is available through live chat, phone support, or email. We can help with website navigation, booking issues, or any other technical difficulties you may encounter.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Do you have a mobile app?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Currently, our services are available through this responsive website that works well on mobile devices. A dedicated mobile app is in development and will be available soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Chat Widget -->
+        <div class="chat-widget" id="chat-widget">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="fas fa-comments"></i>
+                    <span>Live Support</span>
+                </div>
+                <button class="chat-close" onclick="closeChat()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="chat-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! I'm here to help you with any questions about our mobile health clinic services. How can I assist you today?</p>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-message" placeholder="Type your message..." />
+                <button class="chat-send" onclick="sendChatMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Support Options -->
+        <section class="support-options">
+            <div class="container">
+                <h2 class="section-title">Other Ways to Get Support</h2>
+                <div class="support-grid">
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community Health Workers</h3>
+                        <p>Connect with local community health workers who can provide assistance and health education in your area.</p>
+                        <button class="btn btn-outline">Find Local CHW</button>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Health Education Materials</h3>
+                        <p>Download printable health guides, prevention materials, and educational resources for your community.</p>
+                        <a href="health-resources.html" class="btn btn-outline">View Resources</a>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Partnership Opportunities</h3>
+                        <p>Learn about partnering with us to bring mobile health services to underserved communities.</p>
+                        <button class="btn btn-outline" onclick="openPartnershipForm()">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media -->
+        <section class="social-section">
+            <div class="container">
+                <h2 class="section-title">Follow Us for Updates</h2>
+                <p class="section-subtitle">Stay connected for the latest mobile clinic schedules, health tips, and community updates</p>
+                
+                <div class="social-grid">
+                    <a href="#" class="social-card facebook">
+                        <div class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="social-content">
+                            <h3>Facebook</h3>
+                            <p>Community updates and health tips</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="social-card twitter">
+                        <div class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="social-content">
+                            <h3>Twitter</h3>
+                            <p>Real-time clinic updates</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="social-card whatsapp">
+                        <div class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="social-content">
+                            <h3>WhatsApp</h3>
+                            <p>Direct messaging support</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="social-card youtube">
+                        <div class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="social-content">
+                            <h3>YouTube</h3>
+                            <p>Health education videos</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Bridging healthcare accessibility gaps in remote and underserved communities 
+                        through technology and mobile health solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="clinic-locations.html">Find Clinics</a></li>
+                        <li><a href="health-resources.html">Health Resources</a></li>
+                        <li><a href="appointment-booking.html">Book Appointment</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Health Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="health-resources.html#prevention">Disease Prevention</a></li>
+                        <li><a href="health-resources.html#maternal">Maternal Health</a></li>
+                        <li><a href="health-resources.html#child">Child Health</a></li>
+                        <li><a href="health-resources.html#emergency">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Get Updates</h4>
+                    <p>Stay informed about mobile clinic schedules and health tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthConnect. All rights reserved. | 
+                   <a href="#privacy">Privacy Policy</a> | 
+                   <a href="#terms">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chat-toggle" onclick="toggleChat()">
+        <i class="fas fa-comments"></i>
+        <span class="chat-notification" id="chat-notification">1</span>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

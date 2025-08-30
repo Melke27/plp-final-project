@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book appointments with mobile health clinics in your area">
+    <title>Book Appointment - HealthConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>HealthConnect</span>
+                </div>
+                
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clinic-locations.html" class="nav-link">Clinic Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-resources.html" class="nav-link">Health Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="appointment-booking.html" class="nav-link active">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Book Your Appointment</h1>
+                <p class="page-description">
+                    Schedule an appointment with a mobile health clinic near you. Fill out the form below 
+                    and receive confirmation within 24 hours.
+                </p>
+            </div>
+        </section>
+
+        <!-- Booking Steps -->
+        <section class="booking-steps">
+            <div class="container">
+                <div class="steps-container">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Personal Information</h3>
+                            <p>Provide your contact details</p>
+                        </div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Select Service</h3>
+                            <p>Choose your healthcare needs</p>
+                        </div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Choose Location & Time</h3>
+                            <p>Pick clinic and time slot</p>
+                        </div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Confirmation</h3>
+                            <p>Review and confirm booking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form -->
+        <section class="booking-form-section">
+            <div class="container">
+                <form id="appointment-form" class="appointment-form">
+                    
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" id="step-1">
+                        <h2 class="form-title">Personal Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="first-name" class="form-label">
+                                    <i class="fas fa-user"></i>
+                                    First Name *
+                                </label>
+                                <input type="text" id="first-name" name="firstName" class="form-input" required>
+                                <span class="error-message"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="last-name" class="form-label">
+                                    <i class="fas fa-user"></i>
+                                    Last Name *
+                                </label>
+                                <input type="text" id="last-name" name="lastName" class="form-input" required>
+                                <span class="error-message"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address *
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <span class="error-message"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">
+                                    <i class="fas fa-phone"></i>
+                                    Phone Number *
+                                </label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                                <span class="error-message"></span>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="age" class="form-label">
+                                    <i class="fas fa-calendar"></i>
+                                    Age *
+                                </label>
+                                <input type="number" id="age" name="age" class="form-input" min="1" max="120" required>
+                                <span class="error-message"></span>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="gender" class="form-label">
+                                    <i class="fas fa-venus-mars"></i>
+                                    Gender
+                                </label>
+                                <select id="gender" name="gender" class="form-select">
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary" onclick="nextStep(2)">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Service Selection -->
+                    <div class="form-step" id="step-2">
+                        <h2 class="form-title">Select Healthcare Service</h2>
+                        <div class="services-grid">
+                            <div class="service-option">
+                                <input type="radio" id="general-checkup" name="service" value="general-checkup" class="service-radio">
+                                <label for="general-checkup" class="service-label">
+                                    <div class="service-icon">
+                                        <i class="fas fa-stethoscope"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>General Checkup</h3>
+                                        <p>Routine health examination and consultation</p>
+                                        <span class="service-duration">30-45 minutes</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="service-option">
+                                <input type="radio" id="vaccinations" name="service" value="vaccinations" class="service-radio">
+                                <label for="vaccinations" class="service-label">
+                                    <div class="service-icon">
+                                        <i class="fas fa-syringe"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>Vaccinations</h3>
+                                        <p>Immunizations for children and adults</p>
+                                        <span class="service-duration">15-20 minutes</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="service-option">
+                                <input type="radio" id="maternal-care" name="service" value="maternal-care" class="service-radio">
+                                <label for="maternal-care" class="service-label">
+                                    <div class="service-icon">
+                                        <i class="fas fa-baby"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>Maternal Care</h3>
+                                        <p>Prenatal checkups and maternal health services</p>
+                                        <span class="service-duration">45-60 minutes</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="service-option">
+                                <input type="radio" id="child-health" name="service" value="child-health" class="service-radio">
+                                <label for="child-health" class="service-label">
+                                    <div class="service-icon">
+                                        <i class="fas fa-child"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>Child Health</h3>
+                                        <p>Pediatric care and child wellness checkups</p>
+                                        <span class="service-duration">30-40 minutes</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="service-option">
+                                <input type="radio" id="emergency-care" name="service" value="emergency-care" class="service-radio">
+                                <label for="emergency-care" class="service-label">
+                                    <div class="service-icon">
+                                        <i class="fas fa-ambulance"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>Emergency Care</h3>
+                                        <p>Urgent medical attention and emergency treatment</p>
+                                        <span class="service-duration">Immediate</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="service-option">
+                                <input type="radio" id="mental-health" name="service" value="mental-health" class="service-radio">
+                                <label for="mental-health" class="service-label">
+                                    <div class="service-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>Mental Health</h3>
+                                        <p>Mental health counseling and support</p>
+                                        <span class="service-duration">45-60 minutes</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="priority-section">
+                            <h3>Urgency Level</h3>
+                            <div class="priority-options">
+                                <label class="priority-label">
+                                    <input type="radio" name="priority" value="routine" checked>
+                                    <span class="priority-indicator routine"></span>
+                                    <span>Routine (within 1-2 weeks)</span>
+                                </label>
+                                <label class="priority-label">
+                                    <input type="radio" name="priority" value="urgent">
+                                    <span class="priority-indicator urgent"></span>
+                                    <span>Urgent (within 1-3 days)</span>
+                                </label>
+                                <label class="priority-label">
+                                    <input type="radio" name="priority" value="emergency">
+                                    <span class="priority-indicator emergency"></span>
+                                    <span>Emergency (immediate attention)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" onclick="previousStep(1)">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(3)">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Location & Time -->
+                    <div class="form-step" id="step-3">
+                        <h2 class="form-title">Choose Location & Time</h2>
+                        
+                        <div class="location-selection">
+                            <h3>Select Clinic Location</h3>
+                            <div class="clinic-options" id="clinic-options">
+                                <div class="clinic-option">
+                                    <input type="radio" id="kibera-clinic" name="clinic" value="kibera" class="clinic-radio">
+                                    <label for="kibera-clinic" class="clinic-label">
+                                        <div class="clinic-info">
+                                            <h4>Kibera Community Center</h4>
+                                            <p class="clinic-address">Kibera, Nairobi County</p>
+                                            <p class="clinic-date">September 15, 2025 | 9:00 AM - 4:00 PM</p>
+                                            <div class="clinic-services">
+                                                <span class="service-badge">General Care</span>
+                                                <span class="service-badge">Vaccinations</span>
+                                                <span class="service-badge">Maternal Care</span>
+                                            </div>
+                                        </div>
+                                        <div class="clinic-status">
+                                            <span class="status-badge available">Available</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="clinic-option">
+                                    <input type="radio" id="masai-clinic" name="clinic" value="masai-mara" class="clinic-radio">
+                                    <label for="masai-clinic" class="clinic-label">
+                                        <div class="clinic-info">
+                                            <h4>Masai Mara Village Hall</h4>
+                                            <p class="clinic-address">Masai Mara, Narok County</p>
+                                            <p class="clinic-date">September 18, 2025 | 8:00 AM - 3:00 PM</p>
+                                            <div class="clinic-services">
+                                                <span class="service-badge">Child Health</span>
+                                                <span class="service-badge">General Care</span>
+                                                <span class="service-badge">Nutrition</span>
+                                            </div>
+                                        </div>
+                                        <div class="clinic-status">
+                                            <span class="status-badge available">Available</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="clinic-option">
+                                    <input type="radio" id="turkana-clinic" name="clinic" value="turkana" class="clinic-radio">
+                                    <label for="turkana-clinic" class="clinic-label">
+                                        <div class="clinic-info">
+                                            <h4>Turkana Health Post</h4>
+                                            <p class="clinic-address">Lodwar, Turkana County</p>
+                                            <p class="clinic-date">September 22, 2025 | 10:00 AM - 5:00 PM</p>
+                                            <div class="clinic-services">
+                                                <span class="service-badge">Emergency Care</span>
+                                                <span class="service-badge">Mental Health</span>
+                                                <span class="service-badge">Nutrition</span>
+                                            </div>
+                                        </div>
+                                        <div class="clinic-status">
+                                            <span class="status-badge limited">Limited Slots</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="time-selection">
+                            <h3>Preferred Time Slot</h3>
+                            <div class="time-slots" id="time-slots">
+                                <button type="button" class="time-slot" data-time="9:00">9:00 AM</button>
+                                <button type="button" class="time-slot" data-time="10:00">10:00 AM</button>
+                                <button type="button" class="time-slot" data-time="11:00">11:00 AM</button>
+                                <button type="button" class="time-slot" data-time="12:00">12:00 PM</button>
+                                <button type="button" class="time-slot" data-time="13:00">1:00 PM</button>
+                                <button type="button" class="time-slot" data-time="14:00">2:00 PM</button>
+                                <button type="button" class="time-slot" data-time="15:00">3:00 PM</button>
+                                <button type="button" class="time-slot unavailable" data-time="16:00" disabled>4:00 PM (Full)</button>
+                            </div>
+                            <input type="hidden" id="selected-time" name="appointmentTime">
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" onclick="previousStep(2)">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(4)">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Additional Information -->
+                    <div class="form-step" id="step-4">
+                        <h2 class="form-title">Additional Information</h2>
+                        
+                        <div class="form-group">
+                            <label for="medical-history" class="form-label">
+                                <i class="fas fa-file-medical"></i>
+                                Medical History (Optional)
+                            </label>
+                            <textarea id="medical-history" name="medicalHistory" class="form-textarea" 
+                                     placeholder="Please describe any relevant medical conditions, allergies, or medications..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="symptoms" class="form-label">
+                                <i class="fas fa-clipboard-list"></i>
+                                Current Symptoms or Concerns
+                            </label>
+                            <textarea id="symptoms" name="symptoms" class="form-textarea" 
+                                     placeholder="Describe your current symptoms or reason for visit..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-group">
+                                <input type="checkbox" id="emergency-contact" name="emergencyContact">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">This is an emergency - please prioritize my appointment</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-group">
+                                <input type="checkbox" id="terms-agreement" name="termsAgreement" required>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">I agree to the <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a> *</span>
+                            </label>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" onclick="previousStep(3)">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="reviewBooking()">
+                                Review Booking <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Booking Review -->
+                    <div class="booking-review" id="booking-review" style="display: none;">
+                        <h2 class="form-title">Review Your Appointment</h2>
+                        <div class="review-content">
+                            <div class="review-section">
+                                <h3>Personal Information</h3>
+                                <div class="review-item">
+                                    <span class="review-label">Name:</span>
+                                    <span class="review-value" id="review-name"></span>
+                                </div>
+                                <div class="review-item">
+                                    <span class="review-label">Email:</span>
+                                    <span class="review-value" id="review-email"></span>
+                                </div>
+                                <div class="review-item">
+                                    <span class="review-label">Phone:</span>
+                                    <span class="review-value" id="review-phone"></span>
+                                </div>
+                            </div>
+
+                            <div class="review-section">
+                                <h3>Appointment Details</h3>
+                                <div class="review-item">
+                                    <span class="review-label">Service:</span>
+                                    <span class="review-value" id="review-service"></span>
+                                </div>
+                                <div class="review-item">
+                                    <span class="review-label">Clinic:</span>
+                                    <span class="review-value" id="review-clinic"></span>
+                                </div>
+                                <div class="review-item">
+                                    <span class="review-label">Date & Time:</span>
+                                    <span class="review-value" id="review-datetime"></span>
+                                </div>
+                                <div class="review-item">
+                                    <span class="review-label">Priority:</span>
+                                    <span class="review-value" id="review-priority"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" onclick="editBooking()">
+                                <i class="fas fa-edit"></i> Edit Details
+                            </button>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check-circle"></i> Confirm Appointment
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Booking Confirmation -->
+                <div class="booking-confirmation" id="booking-confirmation" style="display: none;">
+                    <div class="confirmation-content">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Appointment Confirmed!</h2>
+                        <p>Your appointment has been successfully booked. You will receive a confirmation email shortly.</p>
+                        
+                        <div class="confirmation-details">
+                            <h3>Appointment Details</h3>
+                            <div class="detail-item">
+                                <strong>Confirmation Number:</strong> <span id="confirmation-number"></span>
+                            </div>
+                            <div class="detail-item">
+                                <strong>What to Bring:</strong>
+                                <ul>
+                                    <li>Valid identification document</li>
+                                    <li>Previous medical records (if available)</li>
+                                    <li>List of current medications</li>
+                                    <li>Insurance information (if applicable)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="confirmation-actions">
+                            <button class="btn btn-primary" onclick="downloadConfirmation()">
+                                <i class="fas fa-download"></i> Download Confirmation
+                            </button>
+                            <a href="index.html" class="btn btn-outline">
+                                <i class="fas fa-home"></i> Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section class="help-section">
+            <div class="container">
+                <h2 class="section-title">Need Help Booking?</h2>
+                <div class="help-cards">
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Call for Assistance</h3>
+                        <p>Speak with our support team for help with booking or questions about services.</p>
+                        <a href="tel:+254700000000" class="btn btn-outline">Call Now</a>
+                    </div>
+
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Live Chat Support</h3>
+                        <p>Get instant help through our live chat feature available 24/7.</p>
+                        <button class="btn btn-outline" onclick="openChat()">Start Chat</button>
+                    </div>
+
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>Frequently Asked Questions</h3>
+                        <p>Find answers to common questions about booking and clinic services.</p>
+                        <a href="contact.html#faq" class="btn btn-outline">View FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Bridging healthcare accessibility gaps in remote and underserved communities 
+                        through technology and mobile health solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="clinic-locations.html">Find Clinics</a></li>
+                        <li><a href="health-resources.html">Health Resources</a></li>
+                        <li><a href="appointment-booking.html">Book Appointment</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Health Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="health-resources.html#prevention">Disease Prevention</a></li>
+                        <li><a href="health-resources.html#maternal">Maternal Health</a></li>
+                        <li><a href="health-resources.html#child">Child Health</a></li>
+                        <li><a href="health-resources.html#emergency">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Get Updates</h4>
+                    <p>Stay informed about mobile clinic schedules and health tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthConnect. All rights reserved. | 
+                   <a href="#privacy">Privacy Policy</a> | 
+                   <a href="#terms">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/booking.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

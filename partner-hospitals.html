@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Partner Hospitals in Ethiopia - HealthConnect Mobile Health Platform">
+    <title>Partner Hospitals - HealthConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>HealthConnect</span>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clinic-locations.html" class="nav-link">Clinic Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="partner-hospitals.html" class="nav-link active">Partner Hospitals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-resources.html" class="nav-link">Health Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="appointment-booking.html" class="nav-link">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="hero-content-center">
+                    <h1 class="hero-title">
+                        Partner <span class="highlight">Hospitals</span> in Ethiopia
+                    </h1>
+                    <p class="hero-description">
+                        Our network of partner hospitals across Ethiopia provides advanced medical care and 
+                        specialized services, working closely with our mobile health clinics.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Hospitals Section -->
+        <section class="hospitals-section">
+            <div class="container">
+                <h2 class="section-title">Major Partner Hospitals</h2>
+                <p class="section-subtitle">Leading healthcare institutions providing specialized care across Ethiopia</p>
+                
+                <div class="hospitals-grid">
+                    <!-- Black Lion Hospital (Tikur Anbessa) -->
+                    <div class="hospital-card featured">
+                        <div class="hospital-image">
+                            <img src="https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Black Lion Hospital - Tikur Anbessa" loading="lazy">
+                            <div class="hospital-badge">
+                                <i class="fas fa-award"></i>
+                                <span>Major Referral Hospital</span>
+                            </div>
+                        </div>
+                        <div class="hospital-content">
+                            <div class="hospital-header">
+                                <h3 class="hospital-name">Black Lion Hospital (Tikur Anbessa)</h3>
+                                <div class="hospital-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Addis Ababa, Ethiopia</span>
+                                </div>
+                            </div>
+                            <p class="hospital-description">
+                                Ethiopia's largest hospital and primary teaching hospital for Addis Ababa University. 
+                                Provides comprehensive medical services including emergency care, surgery, and specialized treatments.
+                            </p>
+                            <div class="hospital-specialties">
+                                <h4>Specialties:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Emergency Medicine</span>
+                                    <span class="specialty-tag">Surgery</span>
+                                    <span class="specialty-tag">Internal Medicine</span>
+                                    <span class="specialty-tag">Pediatrics</span>
+                                    <span class="specialty-tag">Oncology</span>
+                                    <span class="specialty-tag">Cardiology</span>
+                                </div>
+                            </div>
+                            <div class="hospital-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+251 11 276 1000</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>24/7 Emergency Services</span>
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <a href="appointment-booking.html?hospital=tikur-anbessa" class="btn btn-primary">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </a>
+                                <a href="#tikur-anbessa-details" class="btn btn-outline" onclick="showHospitalDetails('tikur-anbessa')">
+                                    <i class="fas fa-info-circle"></i>
+                                    More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- St. Paul's Hospital -->
+                    <div class="hospital-card">
+                        <div class="hospital-image">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="St. Paul's Hospital Millennium Medical College" loading="lazy">
+                            <div class="hospital-badge">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Teaching Hospital</span>
+                            </div>
+                        </div>
+                        <div class="hospital-content">
+                            <div class="hospital-header">
+                                <h3 class="hospital-name">St. Paul's Hospital Millennium Medical College</h3>
+                                <div class="hospital-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Addis Ababa, Ethiopia</span>
+                                </div>
+                            </div>
+                            <p class="hospital-description">
+                                A leading teaching hospital and medical college providing advanced healthcare services 
+                                and medical education. Known for cardiac surgery and specialized treatments.
+                            </p>
+                            <div class="hospital-specialties">
+                                <h4>Specialties:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Cardiac Surgery</span>
+                                    <span class="specialty-tag">Neurosurgery</span>
+                                    <span class="specialty-tag">Orthopedics</span>
+                                    <span class="specialty-tag">Gynecology</span>
+                                    <span class="specialty-tag">Ophthalmology</span>
+                                </div>
+                            </div>
+                            <div class="hospital-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+251 11 551 6000</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>24/7 Emergency Services</span>
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <a href="appointment-booking.html?hospital=st-pauls" class="btn btn-primary">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </a>
+                                <a href="#st-pauls-details" class="btn btn-outline" onclick="showHospitalDetails('st-pauls')">
+                                    <i class="fas fa-info-circle"></i>
+                                    More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yekatit 12 Hospital -->
+                    <div class="hospital-card">
+                        <div class="hospital-image">
+                            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Yekatit 12 Hospital Medical College" loading="lazy">
+                            <div class="hospital-badge">
+                                <i class="fas fa-medical-kit"></i>
+                                <span>Specialized Care</span>
+                            </div>
+                        </div>
+                        <div class="hospital-content">
+                            <div class="hospital-header">
+                                <h3 class="hospital-name">Yekatit 12 Hospital Medical College</h3>
+                                <div class="hospital-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Addis Ababa, Ethiopia</span>
+                                </div>
+                            </div>
+                            <p class="hospital-description">
+                                A government-owned hospital and medical college offering comprehensive healthcare services 
+                                and medical training. Known for maternal health and general medical services.
+                            </p>
+                            <div class="hospital-specialties">
+                                <h4>Specialties:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Maternal Health</span>
+                                    <span class="specialty-tag">General Surgery</span>
+                                    <span class="specialty-tag">Internal Medicine</span>
+                                    <span class="specialty-tag">Pediatrics</span>
+                                    <span class="specialty-tag">Dermatology</span>
+                                </div>
+                            </div>
+                            <div class="hospital-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+251 11 553 2000</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>24/7 Emergency Services</span>
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <a href="appointment-booking.html?hospital=yekatit-12" class="btn btn-primary">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </a>
+                                <a href="#yekatit-12-details" class="btn btn-outline" onclick="showHospitalDetails('yekatit-12')">
+                                    <i class="fas fa-info-circle"></i>
+                                    More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menelik II Referral Hospital -->
+                    <div class="hospital-card">
+                        <div class="hospital-image">
+                            <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Menelik II Referral Hospital" loading="lazy">
+                            <div class="hospital-badge">
+                                <i class="fas fa-hospital"></i>
+                                <span>Referral Center</span>
+                            </div>
+                        </div>
+                        <div class="hospital-content">
+                            <div class="hospital-header">
+                                <h3 class="hospital-name">Menelik II Referral Hospital</h3>
+                                <div class="hospital-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Addis Ababa, Ethiopia</span>
+                                </div>
+                            </div>
+                            <p class="hospital-description">
+                                A major referral hospital providing specialized medical services and serving as a 
+                                backup facility for complex cases from our mobile clinic network.
+                            </p>
+                            <div class="hospital-specialties">
+                                <h4>Specialties:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Emergency Care</span>
+                                    <span class="specialty-tag">Trauma Surgery</span>
+                                    <span class="specialty-tag">ICU Services</span>
+                                    <span class="specialty-tag">Radiology</span>
+                                    <span class="specialty-tag">Laboratory</span>
+                                </div>
+                            </div>
+                            <div class="hospital-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+251 11 557 7000</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>24/7 Emergency Services</span>
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <a href="appointment-booking.html?hospital=menelik-ii" class="btn btn-primary">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </a>
+                                <a href="#menelik-ii-details" class="btn btn-outline" onclick="showHospitalDetails('menelik-ii')">
+                                    <i class="fas fa-info-circle"></i>
+                                    More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jimma University Medical Center -->
+                    <div class="hospital-card">
+                        <div class="hospital-image">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Jimma University Medical Center" loading="lazy">
+                            <div class="hospital-badge">
+                                <i class="fas fa-university"></i>
+                                <span>University Hospital</span>
+                            </div>
+                        </div>
+                        <div class="hospital-content">
+                            <div class="hospital-header">
+                                <h3 class="hospital-name">Jimma University Medical Center</h3>
+                                <div class="hospital-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Jimma, Oromia Region, Ethiopia</span>
+                                </div>
+                            </div>
+                            <p class="hospital-description">
+                                A leading university hospital in southwestern Ethiopia, providing comprehensive 
+                                healthcare services and supporting rural health initiatives in the region.
+                            </p>
+                            <div class="hospital-specialties">
+                                <h4>Specialties:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Rural Health</span>
+                                    <span class="specialty-tag">Community Medicine</span>
+                                    <span class="specialty-tag">General Medicine</span>
+                                    <span class="specialty-tag">Maternal Care</span>
+                                    <span class="specialty-tag">Public Health</span>
+                                </div>
+                            </div>
+                            <div class="hospital-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+251 47 111 2000</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>24/7 Emergency Services</span>
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <a href="appointment-booking.html?hospital=jimma-university" class="btn btn-primary">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </a>
+                                <a href="#jimma-details" class="btn btn-outline" onclick="showHospitalDetails('jimma-university')">
+                                    <i class="fas fa-info-circle"></i>
+                                    More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hawassa University Referral Hospital -->
+                    <div class="hospital-card">
+                        <div class="hospital-image">
+                            <img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Hawassa University Referral Hospital" loading="lazy">
+                            <div class="hospital-badge">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Regional Hospital</span>
+                            </div>
+                        </div>
+                        <div class="hospital-content">
+                            <div class="hospital-header">
+                                <h3 class="hospital-name">Hawassa University Referral Hospital</h3>
+                                <div class="hospital-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Hawassa, SNNPR, Ethiopia</span>
+                                </div>
+                            </div>
+                            <p class="hospital-description">
+                                A major referral hospital serving the Southern Nations region, providing specialized 
+                                care and supporting mobile health initiatives in rural southern Ethiopia.
+                            </p>
+                            <div class="hospital-specialties">
+                                <h4>Specialties:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Regional Care</span>
+                                    <span class="specialty-tag">Maternal Health</span>
+                                    <span class="specialty-tag">Child Health</span>
+                                    <span class="specialty-tag">Surgery</span>
+                                    <span class="specialty-tag">Internal Medicine</span>
+                                </div>
+                            </div>
+                            <div class="hospital-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+251 46 220 4000</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>24/7 Emergency Services</span>
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <a href="appointment-booking.html?hospital=hawassa-university" class="btn btn-primary">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </a>
+                                <a href="#hawassa-details" class="btn btn-outline" onclick="showHospitalDetails('hawassa-university')">
+                                    <i class="fas fa-info-circle"></i>
+                                    More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gondar University Hospital -->
+                    <div class="hospital-card">
+                        <div class="hospital-image">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Gondar University Hospital" loading="lazy">
+                            <div class="hospital-badge">
+                                <i class="fas fa-university"></i>
+                                <span>University Hospital</span>
+                            </div>
+                        </div>
+                        <div class="hospital-content">
+                            <div class="hospital-header">
+                                <h3 class="hospital-name">Gondar University Hospital</h3>
+                                <div class="hospital-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Gondar, Amhara Region, Ethiopia</span>
+                                </div>
+                            </div>
+                            <p class="hospital-description">
+                                A prominent university hospital in northern Ethiopia, serving the Amhara region 
+                                and providing referral services for mobile clinic patients.
+                            </p>
+                            <div class="hospital-specialties">
+                                <h4>Specialties:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">General Medicine</span>
+                                    <span class="specialty-tag">Surgery</span>
+                                    <span class="specialty-tag">Pediatrics</span>
+                                    <span class="specialty-tag">Obstetrics</span>
+                                    <span class="specialty-tag">Dentistry</span>
+                                </div>
+                            </div>
+                            <div class="hospital-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+251 58 114 1000</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>24/7 Emergency Services</span>
+                                </div>
+                            </div>
+                            <div class="hospital-actions">
+                                <a href="appointment-booking.html?hospital=gondar-university" class="btn btn-primary">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Book Appointment
+                                </a>
+                                <a href="#gondar-details" class="btn btn-outline" onclick="showHospitalDetails('gondar-university')">
+                                    <i class="fas fa-info-circle"></i>
+                                    More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hospital Network Stats -->
+        <section class="hospital-stats">
+            <div class="container">
+                <h2 class="section-title">Our Hospital Network Impact</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="45">0</h3>
+                            <p class="stat-label">Partner Hospitals</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="2800">0</h3>
+                            <p class="stat-label">Medical Professionals</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="15000">0</h3>
+                            <p class="stat-label">Emergency Cases Handled</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-procedures"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" data-target="125000">0</h3>
+                            <p class="stat-label">Patients Treated</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Partnership Works -->
+        <section class="partnership-info">
+            <div class="container">
+                <div class="partnership-content">
+                    <div class="partnership-text">
+                        <h2 class="section-title">How Our Hospital Partnership Works</h2>
+                        <div class="partnership-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Mobile Clinic Assessment</h3>
+                                    <p>Our mobile clinics provide initial assessment and basic healthcare services in remote communities.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Referral System</h3>
+                                    <p>Complex cases are referred to our partner hospitals for specialized care and advanced treatment.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Coordinated Care</h3>
+                                    <p>We ensure seamless coordination between mobile clinics and hospitals for comprehensive patient care.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partnership-visual">
+                        <div class="partnership-diagram">
+                            <div class="diagram-item mobile-clinic">
+                                <i class="fas fa-truck-medical"></i>
+                                <span>Mobile Clinic</span>
+                            </div>
+                            <div class="diagram-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="diagram-item hospital">
+                                <i class="fas fa-hospital"></i>
+                                <span>Partner Hospital</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="hospital-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Need Specialized Care?</h2>
+                    <p>Our partner hospitals provide advanced medical services when mobile clinics aren't enough.</p>
+                    <div class="cta-buttons">
+                        <a href="appointment-booking.html" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus"></i>
+                            Book Hospital Appointment
+                        </a>
+                        <a href="contact.html" class="btn btn-outline">
+                            <i class="fas fa-phone"></i>
+                            Contact for Referral
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Bridging healthcare accessibility gaps in remote and underserved communities 
+                        through technology and mobile health solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/melkamu.wako" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/melkamu_wako" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/melkamu-wako" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/melkamuwako27" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="clinic-locations.html">Find Clinics</a></li>
+                        <li><a href="partner-hospitals.html">Partner Hospitals</a></li>
+                        <li><a href="health-resources.html">Health Resources</a></li>
+                        <li><a href="appointment-booking.html">Book Appointment</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Health Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="health-resources.html#prevention">Disease Prevention</a></li>
+                        <li><a href="health-resources.html#maternal">Maternal Health</a></li>
+                        <li><a href="health-resources.html#child">Child Health</a></li>
+                        <li><a href="health-resources.html#emergency">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Get Updates</h4>
+                    <p>Stay informed about mobile clinic schedules and health tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 HealthConnect. All rights reserved. | 
+                       <a href="#privacy">Privacy Policy</a> | 
+                       <a href="#terms">Terms of Service</a>
+                    </p>
+                    <div class="developer-credit">
+                        <p>Developed by <a href="https://melkamuwako27.netlify.app/" target="_blank" class="developer-link">
+                            <i class="fas fa-code"></i> Melkamu Wako
+                        </a> - Computer Science Student at ASTU</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hospital Details Modal -->
+    <div id="hospital-modal" class="modal" style="display: none;">
+        <div class="modal-overlay" onclick="closeHospitalModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-hospital-name">Hospital Details</h3>
+                <button class="modal-close" onclick="closeHospitalModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-hospital-content">
+                <!-- Hospital details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/hospitals.js"></script>
+</body>
+</html>
