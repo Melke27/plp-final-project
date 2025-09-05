@@ -1,4 +1,990 @@
 /**
+ * Health Tools Interactive Features
+ * Comprehensive health management system
+ */
+
+class HealthToolsManager {
+    constructor() {
+        this.charts = {};
+        this.medications = JSON.parse(localStorage.getItem('medications') || '[]');
+        this.emergencyContacts = JSON.parse(localStorage.getItem('emergencyContacts') || '[]');
+        this.healthData = JSON.parse(localStorage.getItem('healthData') || '{}');
+        this.reminderTimers = [];
+        
+        this.init();
+        this.setupEventListeners();
+        this.loadSavedData();
+        this.setupMedicationReminders();
+    }
+
+    init() {
+        // Initialize AOS animations
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 50
+            });
+        }
+
+        this.showLoadingSpinner(false);
+    }
+
+    setupEventListeners() {
+        // Quick tool navigation
+        document.querySelectorAll('.quick-tool-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const tool = e.currentTarget.dataset.tool;
+                this.scrollToTool(tool);
+            });
+        });
+
+        // Symptom checker
+        const symptomForm = document.getElementById('symptom-form');
+        if (symptomForm) {
+            symptomForm.addEventListener('submit', this.handleSymptomSubmission.bind(this));
+        }
+
+        // Health tracker navigation
+        document.querySelectorAll('.tracker-nav-btn').forEach(btn => {
+            btn.addEventListener('click', this.switchTrackerSection.bind(this));
+        });
+
+        // Tracker forms
+        this.setupTrackerForms();
+
+        // Medication management
+        this.setupMedicationEvents();
+
+        // Emergency contacts
+        this.setupEmergencyContactEvents();
+
+        // Emergency actions
+        this.setupEmergencyActions();
+
+        // Mood selector
+        this.setupMoodSelector();
+
+        // Modal events
+        this.setupModalEvents();
+
+        // Real-time BMI calculation
+        this.setupBMICalculator();
+
+        // Severity slider
+        this.setupSeveritySlider();
+
+        // Window events
+        window.addEventListener('beforeunload', this.saveAllData.bind(this));
+    }
+
+    // Symptom Checker
+    async handleSymptomSubmission(e) {
+        e.preventDefault();
+        this.showLoadingSpinner(true);
+
+        const formData = new FormData(e.target);
+        const symptoms = {
+            age: formData.get('age'),
+            gender: formData.get('gender'),
+            primarySymptom: formData.get('primary-symptom'),
+            duration: formData.get('duration'),
+            additionalSymptoms: formData.getAll('additional-symptoms')
+        };
+
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        const results = this.analyzeSymptoms(symptoms);
+        this.displaySymptomResults(results);
+        this.showLoadingSpinner(false);
+    }
+
+    analyzeSymptoms(symptoms) {
+        // Symptom analysis logic based on East African health patterns
+        const conditions = [];
+        
+        const { primarySymptom, additionalSymptoms, duration, age } = symptoms;
+        
+        if (primarySymptom === 'fever') {
+            if (additionalSymptoms.includes('body-aches')) {
+                conditions.push({
+                    name: 'Malaria',
+                    probability: 'High',
+                    severity: 'high',
+                    description: 'Common in East Africa. Symptoms include fever, body aches, and fatigue.',
+                    recommendations: ['Seek immediate medical attention', 'Get tested for malaria', 'Stay hydrated']
+                });
+            }
+            conditions.push({
+                name: 'Viral Infection',
+                probability: 'Medium',
+                severity: 'med',
+                description: 'Common viral infections that cause fever and general discomfort.',
+                recommendations: ['Rest and hydration', 'Monitor temperature', 'Consult doctor if fever persists']
+            });
+        }
+
+        if (primarySymptom === 'diarrhea') {
+            conditions.push({
+                name: 'Gastroenteritis',
+                probability: 'High',
+                severity: 'med',
+                description: 'Stomach infection causing diarrhea, often from contaminated water/food.',
+                recommendations: ['Stay hydrated with ORS', 'Avoid dairy and fatty foods', 'Seek medical care if severe']
+            });
+        }
+
+        if (primarySymptom === 'headache') {
+            if (additionalSymptoms.includes('fever') && additionalSymptoms.includes('nausea')) {
+                conditions.push({
+                    name: 'Meningitis (Concern)',
+                    probability: 'Low',
+                    severity: 'high',
+                    description: 'Serious condition requiring immediate medical attention.',
+                    recommendations: ['Seek emergency medical care immediately', 'Do not delay treatment']
+                });
+            }
+            conditions.push({
+                name: 'Tension Headache',
+                probability: 'High',
+                severity: 'low',
+                description: 'Common headache often caused by stress, dehydration, or fatigue.',
+                recommendations: ['Rest in dark, quiet room', 'Stay hydrated', 'Consider mild pain relief']
+            });
+        }
+
+        if (primarySymptom === 'difficulty-breathing') {
+            conditions.push({
+                name: 'Respiratory Infection',
+                probability: 'Medium',
+                severity: 'high',
+                description: 'Could be pneumonia, COVID-19, or other respiratory conditions.',
+                recommendations: ['Seek immediate medical attention', 'Monitor oxygen levels if possible', 'Isolate until diagnosed']
+            });
+        }
+
+        if (primarySymptom === 'chest-pain') {
+            conditions.push({
+                name: 'Cardiac Event (Emergency)',
+                probability: 'Unknown',
+                severity: 'high',
+                description: 'Chest pain requires immediate medical evaluation.',
+                recommendations: ['Call emergency services immediately', 'Do not drive yourself', 'Chew aspirin if not allergic']
+            });
+        }
+
+        // Add duration-based adjustments
+        if (duration === 'more-week') {
+            conditions.forEach(condition => {
+                condition.description += ' Prolonged symptoms require medical evaluation.';
+            });
+        }
+
+        return conditions.length > 0 ? conditions : [{
+            name: 'General Health Concern',
+            probability: 'Unknown',
+            severity: 'med',
+            description: 'Your symptoms may indicate various conditions. Medical consultation recommended.',
+            recommendations: ['Consult with healthcare provider', 'Monitor symptoms', 'Rest and stay hydrated']
+        }];
+    }
+
+    displaySymptomResults(results) {
+        const resultsContainer = document.getElementById('symptom-results');
+        const resultsContent = document.getElementById('results-content');
+        const placeholder = document.querySelector('.symptom-placeholder');
+
+        placeholder.style.display = 'none';
+        resultsContainer.classList.remove('hidden');
+
+        resultsContent.innerHTML = results.map(condition => `
+            <div class="condition-card">
+                <div class="condition-title">
+                    <h4>${condition.name}</h4>
+                    <span class="severity-badge severity-${condition.severity}">
+                        ${condition.severity.toUpperCase()} RISK
+                    </span>
+                </div>
+                <p><strong>Probability:</strong> ${condition.probability}</p>
+                <p>${condition.description}</p>
+                <div class="recommendations">
+                    <strong>Recommendations:</strong>
+                    <ul>
+                        ${condition.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        `).join('');
+
+        this.showToast('Symptom analysis completed', 'success');
+    }
+
+    // Health Tracker
+    switchTrackerSection(e) {
+        const targetSection = e.currentTarget.dataset.section;
+        
+        // Update nav buttons
+        document.querySelectorAll('.tracker-nav-btn').forEach(btn => 
+            btn.classList.remove('active')
+        );
+        e.currentTarget.classList.add('active');
+
+        // Switch sections
+        document.querySelectorAll('.tracker-section').forEach(section => 
+            section.classList.remove('active')
+        );
+        document.getElementById(`${targetSection}-section`).classList.add('active');
+    }
+
+    setupTrackerForms() {
+        // Vitals form
+        const vitalsForm = document.getElementById('vitals-form');
+        if (vitalsForm) {
+            vitalsForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.saveVitals(new FormData(e.target));
+            });
+        }
+
+        // Symptoms log form
+        const symptomsForm = document.getElementById('symptoms-log-form');
+        if (symptomsForm) {
+            symptomsForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.logSymptom(new FormData(e.target));
+            });
+        }
+
+        // Weight form
+        const weightForm = document.getElementById('weight-form');
+        if (weightForm) {
+            weightForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.saveWeight(new FormData(e.target));
+            });
+        }
+
+        // Mood form
+        const moodForm = document.getElementById('mood-form');
+        if (moodForm) {
+            moodForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.saveMoodSleep(new FormData(e.target));
+            });
+        }
+    }
+
+    saveVitals(formData) {
+        const vitals = {
+            date: new Date().toISOString().split('T')[0],
+            systolic: formData.get('bp-systolic'),
+            diastolic: formData.get('bp-diastolic'),
+            heartRate: formData.get('heart-rate'),
+            temperature: formData.get('temperature')
+        };
+
+        if (!this.healthData.vitals) this.healthData.vitals = [];
+        this.healthData.vitals.push(vitals);
+        this.saveHealthData();
+        this.updateVitalsChart();
+        this.updateHealthSummary();
+        this.showToast('Vitals saved successfully', 'success');
+        
+        document.getElementById('vitals-form').reset();
+    }
+
+    logSymptom(formData) {
+        const symptom = {
+            date: new Date().toISOString(),
+            type: formData.get('symptom-type'),
+            severity: formData.get('severity'),
+            notes: formData.get('symptom-notes')
+        };
+
+        if (!this.healthData.symptoms) this.healthData.symptoms = [];
+        this.healthData.symptoms.push(symptom);
+        this.saveHealthData();
+        this.updateSymptomsDisplay();
+        this.updateHealthSummary();
+        this.showToast('Symptom logged successfully', 'success');
+        
+        document.getElementById('symptoms-log-form').reset();
+        document.getElementById('severity-display').textContent = '5';
+        document.getElementById('severity').value = '5';
+    }
+
+    saveWeight(formData) {
+        const weight = parseFloat(formData.get('weight'));
+        const height = parseFloat(formData.get('height'));
+        const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+
+        const weightEntry = {
+            date: new Date().toISOString().split('T')[0],
+            weight,
+            height,
+            bmi: parseFloat(bmi)
+        };
+
+        if (!this.healthData.weight) this.healthData.weight = [];
+        this.healthData.weight.push(weightEntry);
+        this.saveHealthData();
+        this.updateWeightChart();
+        this.updateHealthSummary();
+        this.showToast('Weight data saved successfully', 'success');
+        
+        // Don't reset form as height usually stays the same
+    }
+
+    saveMoodSleep(formData) {
+        const moodSleep = {
+            date: new Date().toISOString().split('T')[0],
+            mood: formData.get('mood'),
+            sleepHours: formData.get('sleep-hours'),
+            sleepQuality: formData.get('sleep-quality')
+        };
+
+        if (!this.healthData.moodSleep) this.healthData.moodSleep = [];
+        this.healthData.moodSleep.push(moodSleep);
+        this.saveHealthData();
+        this.updateHealthSummary();
+        this.showToast('Mood and sleep data saved', 'success');
+        
+        document.getElementById('mood-form').reset();
+        document.getElementById('selected-mood').value = '';
+        document.querySelectorAll('.mood-btn').forEach(btn => btn.classList.remove('active'));
+    }
+
+    // Charts
+    updateVitalsChart() {
+        const ctx = document.getElementById('vitals-chart');
+        if (!ctx) return;
+
+        const vitalsData = this.healthData.vitals?.slice(-7) || [];
+        
+        if (this.charts.vitals) {
+            this.charts.vitals.destroy();
+        }
+
+        this.charts.vitals = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: vitalsData.map(v => new Date(v.date).toLocaleDateString()),
+                datasets: [{
+                    label: 'Systolic BP',
+                    data: vitalsData.map(v => v.systolic),
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    fill: false
+                }, {
+                    label: 'Diastolic BP',
+                    data: vitalsData.map(v => v.diastolic),
+                    borderColor: '#f59e0b',
+                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                    fill: false
+                }, {
+                    label: 'Heart Rate',
+                    data: vitalsData.map(v => v.heartRate),
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+    }
+
+    updateWeightChart() {
+        const ctx = document.getElementById('weight-chart');
+        if (!ctx) return;
+
+        const weightData = this.healthData.weight?.slice(-10) || [];
+        
+        if (this.charts.weight) {
+            this.charts.weight.destroy();
+        }
+
+        this.charts.weight = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: weightData.map(w => new Date(w.date).toLocaleDateString()),
+                datasets: [{
+                    label: 'Weight (kg)',
+                    data: weightData.map(w => w.weight),
+                    borderColor: '#14b8a6',
+                    backgroundColor: 'rgba(20, 184, 166, 0.1)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+    }
+
+    updateSymptomsDisplay() {
+        const symptomsContainer = document.getElementById('symptoms-list');
+        const recentSymptoms = this.healthData.symptoms?.slice(-5).reverse() || [];
+
+        if (recentSymptoms.length === 0) {
+            symptomsContainer.innerHTML = '<p>No symptoms logged yet.</p>';
+            return;
+        }
+
+        symptomsContainer.innerHTML = recentSymptoms.map(symptom => `
+            <div class="symptom-entry">
+                <div class="symptom-header">
+                    <strong>${symptom.type}</strong>
+                    <span class="symptom-severity">Severity: ${symptom.severity}/10</span>
+                </div>
+                <div class="symptom-date">${new Date(symptom.date).toLocaleDateString()}</div>
+                ${symptom.notes ? `<p class="symptom-notes">${symptom.notes}</p>` : ''}
+            </div>
+        `).join('');
+    }
+
+    updateHealthSummary() {
+        const totalEntries = (this.healthData.vitals?.length || 0) + 
+                           (this.healthData.symptoms?.length || 0) + 
+                           (this.healthData.weight?.length || 0) + 
+                           (this.healthData.moodSleep?.length || 0);
+
+        document.getElementById('total-entries').textContent = totalEntries;
+
+        // Calculate streak (simplified)
+        const today = new Date().toISOString().split('T')[0];
+        const hasDataToday = this.healthData.vitals?.some(v => v.date === today) ||
+                            this.healthData.symptoms?.some(s => s.date.split('T')[0] === today) ||
+                            this.healthData.moodSleep?.some(m => m.date === today);
+        
+        document.getElementById('streak-days').textContent = hasDataToday ? '1' : '0';
+    }
+
+    // Medication Management
+    setupMedicationEvents() {
+        const medicationForm = document.getElementById('medication-form');
+        if (medicationForm) {
+            medicationForm.addEventListener('submit', this.addMedication.bind(this));
+        }
+
+        const addTimeBtn = document.getElementById('add-time');
+        if (addTimeBtn) {
+            addTimeBtn.addEventListener('click', this.addTimeInput.bind(this));
+        }
+
+        this.displayMedications();
+        this.displayTodaysSchedule();
+    }
+
+    addTimeInput() {
+        const timeInputs = document.getElementById('time-inputs');
+        const newInput = document.createElement('input');
+        newInput.type = 'time';
+        newInput.className = 'time-input';
+        timeInputs.appendChild(newInput);
+    }
+
+    addMedication(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        
+        const times = Array.from(document.querySelectorAll('.time-input'))
+                          .map(input => input.value)
+                          .filter(time => time);
+
+        const medication = {
+            id: Date.now().toString(),
+            name: formData.get('medication-name'),
+            dosage: formData.get('dosage'),
+            frequency: formData.get('frequency'),
+            times: times,
+            notes: formData.get('medication-notes'),
+            active: true
+        };
+
+        this.medications.push(medication);
+        this.saveMedications();
+        this.displayMedications();
+        this.displayTodaysSchedule();
+        this.setupMedicationReminders();
+        this.showToast('Medication added successfully', 'success');
+        
+        e.target.reset();
+        // Reset time inputs to just one
+        document.getElementById('time-inputs').innerHTML = '<input type="time" class="time-input" value="08:00">';
+    }
+
+    displayMedications() {
+        const container = document.getElementById('medications-list');
+        const placeholder = document.querySelector('.medication-placeholder');
+
+        if (this.medications.length === 0) {
+            placeholder.style.display = 'block';
+            return;
+        }
+
+        placeholder.style.display = 'none';
+        container.innerHTML = this.medications.map(med => `
+            <div class="medication-item" data-id="${med.id}">
+                <div class="item-header">
+                    <h4>${med.name}</h4>
+                    <div class="medication-actions">
+                        <button class="btn btn-outline btn-small edit-medication" data-id="${med.id}">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-danger btn-small delete-medication" data-id="${med.id}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <p><strong>Dosage:</strong> ${med.dosage}</p>
+                <p><strong>Frequency:</strong> ${med.frequency}</p>
+                <p><strong>Times:</strong> ${med.times.join(', ')}</p>
+                ${med.notes ? `<p><strong>Notes:</strong> ${med.notes}</p>` : ''}
+                <div class="pill-badge">Active</div>
+            </div>
+        `).join('');
+
+        // Add event listeners for edit/delete
+        container.querySelectorAll('.delete-medication').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const medId = e.currentTarget.dataset.id;
+                this.deleteMedication(medId);
+            });
+        });
+    }
+
+    deleteMedication(id) {
+        if (confirm('Are you sure you want to delete this medication?')) {
+            this.medications = this.medications.filter(med => med.id !== id);
+            this.saveMedications();
+            this.displayMedications();
+            this.displayTodaysSchedule();
+            this.showToast('Medication deleted', 'info');
+        }
+    }
+
+    displayTodaysSchedule() {
+        const container = document.getElementById('todays-medications');
+        const today = new Date().toISOString().split('T')[0];
+        
+        const todaysSchedule = [];
+        
+        this.medications.forEach(med => {
+            med.times.forEach(time => {
+                todaysSchedule.push({
+                    time,
+                    medication: med.name,
+                    dosage: med.dosage,
+                    id: `${med.id}-${time}`
+                });
+            });
+        });
+
+        todaysSchedule.sort((a, b) => a.time.localeCompare(b.time));
+
+        if (todaysSchedule.length === 0) {
+            container.innerHTML = '<p>No medications scheduled for today.</p>';
+            return;
+        }
+
+        container.innerHTML = todaysSchedule.map(item => `
+            <div class="schedule-item">
+                <div>
+                    <span class="schedule-time">${item.time}</span>
+                    <span>${item.medication} (${item.dosage})</span>
+                </div>
+                <span class="schedule-status">Pending</span>
+            </div>
+        `).join('');
+    }
+
+    setupMedicationReminders() {
+        // Clear existing timers
+        this.reminderTimers.forEach(timer => clearTimeout(timer));
+        this.reminderTimers = [];
+
+        this.medications.forEach(med => {
+            med.times.forEach(time => {
+                this.scheduleReminder(med, time);
+            });
+        });
+    }
+
+    scheduleReminder(medication, time) {
+        const now = new Date();
+        const reminderTime = new Date();
+        const [hours, minutes] = time.split(':').map(Number);
+        
+        reminderTime.setHours(hours, minutes, 0, 0);
+        
+        // If time has passed today, schedule for tomorrow
+        if (reminderTime <= now) {
+            reminderTime.setDate(reminderTime.getDate() + 1);
+        }
+
+        const timeUntilReminder = reminderTime.getTime() - now.getTime();
+
+        const timer = setTimeout(() => {
+            this.showMedicationReminder(medication, time);
+        }, timeUntilReminder);
+
+        this.reminderTimers.push(timer);
+    }
+
+    showMedicationReminder(medication, time) {
+        // Update modal content
+        document.getElementById('reminder-medication-name').textContent = medication.name;
+        document.getElementById('reminder-dosage').textContent = medication.dosage;
+        document.getElementById('reminder-instructions').textContent = medication.notes || 'No special instructions';
+
+        // Show modal
+        document.getElementById('medication-reminder-modal').classList.remove('hidden');
+
+        // Show browser notification if permission granted
+        if (Notification.permission === 'granted') {
+            new Notification('Medication Reminder', {
+                body: `Time to take ${medication.name} (${medication.dosage})`,
+                icon: '/favicon.ico'
+            });
+        }
+    }
+
+    // Emergency Contacts
+    setupEmergencyContactEvents() {
+        const contactForm = document.getElementById('emergency-contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', this.addEmergencyContact.bind(this));
+        }
+
+        this.displayEmergencyContacts();
+    }
+
+    addEmergencyContact(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+
+        const contact = {
+            id: Date.now().toString(),
+            name: formData.get('contact-name'),
+            relationship: formData.get('contact-relationship'),
+            phone: formData.get('contact-phone'),
+            location: formData.get('contact-location')
+        };
+
+        this.emergencyContacts.push(contact);
+        this.saveEmergencyContacts();
+        this.displayEmergencyContacts();
+        this.showToast('Emergency contact added', 'success');
+        
+        e.target.reset();
+    }
+
+    displayEmergencyContacts() {
+        const container = document.getElementById('personal-contacts-list');
+        const placeholder = document.querySelector('.contacts-placeholder');
+
+        if (this.emergencyContacts.length === 0) {
+            placeholder.style.display = 'block';
+            return;
+        }
+
+        placeholder.style.display = 'none';
+        container.innerHTML = this.emergencyContacts.map(contact => `
+            <div class="contact-card">
+                <div class="card-header">
+                    <h4>${contact.name}</h4>
+                    <button class="btn btn-danger btn-small delete-contact" data-id="${contact.id}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <p><strong>Relationship:</strong> ${contact.relationship}</p>
+                <p><strong>Phone:</strong> <a href="tel:${contact.phone}">${contact.phone}</a></p>
+                ${contact.location ? `<p><strong>Location:</strong> ${contact.location}</p>` : ''}
+            </div>
+        `).join('');
+
+        // Add delete event listeners
+        container.querySelectorAll('.delete-contact').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const contactId = e.currentTarget.dataset.id;
+                this.deleteEmergencyContact(contactId);
+            });
+        });
+    }
+
+    deleteEmergencyContact(id) {
+        if (confirm('Are you sure you want to delete this emergency contact?')) {
+            this.emergencyContacts = this.emergencyContacts.filter(contact => contact.id !== id);
+            this.saveEmergencyContacts();
+            this.displayEmergencyContacts();
+            this.showToast('Emergency contact deleted', 'info');
+        }
+    }
+
+    // Emergency Actions
+    setupEmergencyActions() {
+        document.getElementById('call-ambulance')?.addEventListener('click', this.handleEmergencyCall.bind(this));
+        document.getElementById('find-nearest-hospital')?.addEventListener('click', this.findNearestHospital.bind(this));
+        document.getElementById('emergency-book-appointment')?.addEventListener('click', this.bookEmergencyAppointment.bind(this));
+        document.getElementById('share-location')?.addEventListener('click', this.shareLocation.bind(this));
+    }
+
+    handleEmergencyCall() {
+        document.getElementById('emergency-alert-modal').classList.remove('hidden');
+    }
+
+    findNearestHospital() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const { latitude, longitude } = position.coords;
+                const mapsUrl = `https://www.google.com/maps/search/hospital/@${latitude},${longitude},15z`;
+                window.open(mapsUrl, '_blank');
+                this.showToast('Opening map to find nearest hospital', 'info');
+            }, () => {
+                this.showToast('Unable to get your location', 'danger');
+            });
+        } else {
+            this.showToast('Geolocation not supported', 'danger');
+        }
+    }
+
+    bookEmergencyAppointment() {
+        window.location.href = 'appointment-booking.html?emergency=true';
+    }
+
+    shareLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const { latitude, longitude } = position.coords;
+                const locationUrl = `https://maps.google.com/?q=${latitude},${longitude}`;
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'My Current Location - Health Emergency',
+                        text: 'I need medical assistance. Here is my location:',
+                        url: locationUrl
+                    });
+                } else {
+                    navigator.clipboard.writeText(locationUrl);
+                    this.showToast('Location copied to clipboard', 'success');
+                }
+            }, () => {
+                this.showToast('Unable to get your location', 'danger');
+            });
+        }
+    }
+
+    // Utility Functions
+    setupMoodSelector() {
+        document.querySelectorAll('.mood-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
+                e.currentTarget.classList.add('active');
+                document.getElementById('selected-mood').value = e.currentTarget.dataset.mood;
+            });
+        });
+    }
+
+    setupBMICalculator() {
+        const weightInput = document.getElementById('weight');
+        const heightInput = document.getElementById('height');
+        
+        if (weightInput && heightInput) {
+            [weightInput, heightInput].forEach(input => {
+                input.addEventListener('input', this.calculateBMI.bind(this));
+            });
+        }
+    }
+
+    calculateBMI() {
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value);
+
+        if (weight && height) {
+            const bmi = (weight / ((height / 100) ** 2));
+            const bmiValue = document.getElementById('bmi-value');
+            const bmiCategory = document.getElementById('bmi-category');
+
+            bmiValue.textContent = bmi.toFixed(1);
+
+            if (bmi < 18.5) {
+                bmiCategory.textContent = 'Underweight';
+                bmiCategory.style.color = '#f59e0b';
+            } else if (bmi < 25) {
+                bmiCategory.textContent = 'Normal weight';
+                bmiCategory.style.color = '#10b981';
+            } else if (bmi < 30) {
+                bmiCategory.textContent = 'Overweight';
+                bmiCategory.style.color = '#f59e0b';
+            } else {
+                bmiCategory.textContent = 'Obese';
+                bmiCategory.style.color = '#ef4444';
+            }
+        }
+    }
+
+    setupSeveritySlider() {
+        const slider = document.getElementById('severity');
+        const display = document.getElementById('severity-display');
+
+        if (slider && display) {
+            slider.addEventListener('input', (e) => {
+                display.textContent = e.target.value;
+            });
+        }
+    }
+
+    setupModalEvents() {
+        // Close buttons
+        document.querySelectorAll('.modal-close').forEach(btn => {
+            btn.addEventListener('click', this.closeModals.bind(this));
+        });
+
+        // Modal background clicks
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    this.closeModals();
+                }
+            });
+        });
+
+        // Emergency modal buttons
+        document.getElementById('call-emergency')?.addEventListener('click', () => {
+            window.location.href = 'tel:911'; // Default emergency number
+        });
+
+        document.getElementById('find-hospital')?.addEventListener('click', () => {
+            this.findNearestHospital();
+            this.closeModals();
+        });
+
+        document.getElementById('cancel-emergency')?.addEventListener('click', this.closeModals.bind(this));
+
+        // Medication reminder buttons
+        document.getElementById('mark-taken')?.addEventListener('click', () => {
+            this.showToast('Medication marked as taken', 'success');
+            this.closeModals();
+        });
+
+        document.getElementById('snooze-reminder')?.addEventListener('click', () => {
+            this.showToast('Reminder snoozed for 10 minutes', 'info');
+            this.closeModals();
+        });
+
+        document.getElementById('skip-dose')?.addEventListener('click', () => {
+            this.showToast('Dose skipped', 'info');
+            this.closeModals();
+        });
+    }
+
+    // Utility methods
+    scrollToTool(toolId) {
+        const element = document.getElementById(toolId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    showLoadingSpinner(show) {
+        const spinner = document.getElementById('loading-spinner');
+        if (show) {
+            spinner.classList.remove('hidden');
+        } else {
+            spinner.classList.add('hidden');
+        }
+    }
+
+    showToast(message, type = 'info') {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+        
+        const icon = type === 'success' ? 'check' : 
+                    type === 'danger' ? 'exclamation-triangle' : 
+                    type === 'info' ? 'info-circle' : 'bell';
+        
+        toast.innerHTML = `
+            <i class="fas fa-${icon}"></i>
+            <span>${message}</span>
+        `;
+
+        container.appendChild(toast);
+
+        setTimeout(() => {
+            toast.remove();
+        }, 5000);
+    }
+
+    closeModals() {
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.classList.add('hidden');
+        });
+    }
+
+    // Data persistence
+    saveHealthData() {
+        localStorage.setItem('healthData', JSON.stringify(this.healthData));
+    }
+
+    saveMedications() {
+        localStorage.setItem('medications', JSON.stringify(this.medications));
+    }
+
+    saveEmergencyContacts() {
+        localStorage.setItem('emergencyContacts', JSON.stringify(this.emergencyContacts));
+    }
+
+    saveAllData() {
+        this.saveHealthData();
+        this.saveMedications();
+        this.saveEmergencyContacts();
+    }
+
+    loadSavedData() {
+        this.updateHealthSummary();
+        this.updateVitalsChart();
+        this.updateWeightChart();
+        this.updateSymptomsDisplay();
+        this.displayMedications();
+        this.displayTodaysSchedule();
+        this.displayEmergencyContacts();
+
+        // Request notification permission
+        if ('Notification' in window && Notification.permission === 'default') {
+            Notification.requestPermission();
+        }
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new HealthToolsManager();
+});
+
+// Service Worker registration for PWA features
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(console.error);
+}
+
+/**
  * HealthConnect Platform - Health Tools JavaScript
  * Handles BMI calculator, symptom checker, and other health tools
  */

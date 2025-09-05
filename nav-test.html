@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test - HealthConnect</title>
+    
+    <!-- Base styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Enhanced Navigation Styles -->
+    <link rel="stylesheet" href="css/enhanced-navigation.css">
+    <link rel="stylesheet" href="css/navigation-components.css">
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom test styles -->
+    <style>
+        /* Ensure proper spacing and visibility */
+        .test-content {
+            padding: 100px 20px 50px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        .test-section {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .test-title {
+            color: #2563eb;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .instruction {
+            background: #dbeafe;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+            margin-bottom: 20px;
+        }
+        
+        .feature-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .demo-card {
+            padding: 20px;
+            border: 2px dashed #2563eb;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .demo-card h4 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+        
+        /* Mobile-specific instructions */
+        .mobile-only {
+            display: none;
+        }
+        
+        .desktop-only {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-only {
+                display: block;
+            }
+            .desktop-only {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation will be injected here by JavaScript -->
+    
+    <main class="test-content">
+        <div class="test-section">
+            <h1 class="test-title">🎯 Enhanced Navigation System Test</h1>
+            
+            <div class="instruction">
+                <h3>📱 How to Access the Sidebar:</h3>
+                <div class="mobile-only">
+                    <p><strong>Mobile View:</strong> Tap the hamburger menu (☰) in the top-right corner to open the sidebar.</p>
+                </div>
+                <div class="desktop-only">
+                    <p><strong>Desktop View:</strong> Click the hamburger menu (☰) in the top-right corner to open the sidebar, or resize your browser window to mobile size.</p>
+                </div>
+            </div>
+            
+            <div class="feature-demo">
+                <div class="demo-card">
+                    <h4>🔍 Search Feature</h4>
+                    <p>Try typing in the search bar (desktop) to see live suggestions</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h4>📱 Mobile Sidebar</h4>
+                    <p>Click the hamburger menu to open the beautiful animated sidebar</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h4>🚨 Quick Actions</h4>
+                    <p>Look for emergency and appointment buttons in the sidebar</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h4>📊 Progress Bar</h4>
+                    <p>Scroll down to see the page progress indicator at the top</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2 class="test-title">🎨 Navigation Features</h2>
+            
+            <h3>✨ What you should see:</h3>
+            <ul style="font-size: 1.1rem; line-height: 1.8;">
+                <li><strong>Glassmorphism Header:</strong> Transparent header with blur effect</li>
+                <li><strong>Animated Logo:</strong> Heartbeat animation on the medical icon</li>
+                <li><strong>Hover Effects:</strong> Smooth sliding backgrounds on menu items</li>
+                <li><strong>Scroll Effects:</strong> Header changes appearance as you scroll</li>
+                <li><strong>Sidebar Menu:</strong> Full-featured sidebar with sections and quick actions</li>
+                <li><strong>Search Functionality:</strong> Live search with suggestions (desktop)</li>
+                <li><strong>FAB Button:</strong> Floating action button appears when scrolling (mobile)</li>
+                <li><strong>Toast Notifications:</strong> Feedback messages for user actions</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h2 class="test-title">🛠️ Sidebar Contents</h2>
+            
+            <p>The sidebar includes:</p>
+            <ul style="font-size: 1.1rem; line-height: 1.8;">
+                <li><strong>Header Section:</strong> HealthConnect branding with tagline</li>
+                <li><strong>Quick Actions:</strong> Emergency Call & Book Appointment buttons</li>
+                <li><strong>Main Navigation:</strong> Home, Services, Health Tools, About, Contact</li>
+                <li><strong>Health Resources:</strong> Symptom Checker, Medication Guide, Find Doctor, Hospital Locator</li>
+                <li><strong>Account Section:</strong> Profile, Settings, Logout</li>
+                <li><strong>Social Links:</strong> Facebook, Twitter, Instagram, LinkedIn</li>
+                <li><strong>Footer:</strong> Copyright and developer credit</li>
+            </ul>
+        </div>
+        
+        <!-- Add more content to test scrolling -->
+        <div class="test-section">
+            <h2 class="test-title">📏 Scroll Test Section</h2>
+            <p>This section helps test the scroll-based animations and progress bar.</p>
+            <div style="height: 200px; background: linear-gradient(45deg, #3b82f6, #06b6d4); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                Keep scrolling to see the progress bar fill up!
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2 class="test-title">🎯 Final Test Section</h2>
+            <p>If you can see the progress bar at the top fill to 100% when you reach here, the scroll tracking is working perfectly!</p>
+            <div style="height: 150px; background: #10b981; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                ✅ Navigation System Working!
+            </div>
+        </div>
+    </main>
+    
+    <!-- Enhanced Navigation JavaScript -->
+    <script src="js/enhanced-navigation.js"></script>
+    
+    <!-- Additional test script -->
+    <script>
+        // Wait for navigation to load, then add some test functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add some visual feedback when sidebar opens/closes
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        const sidebar = document.querySelector('.sidebar');
+                        if (sidebar && sidebar.classList.contains('open')) {
+                            console.log('✅ Sidebar opened successfully!');
+                            // Show a temporary indicator
+                            const indicator = document.createElement('div');
+                            indicator.style.cssText = `
+                                position: fixed;
+                                top: 50%;
+                                right: 20px;
+                                background: #10b981;
+                                color: white;
+                                padding: 10px 15px;
+                                border-radius: 8px;
+                                font-weight: 600;
+                                z-index: 9999;
+                                transform: translateY(-50%);
+                                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                            `;
+                            indicator.textContent = '✅ Sidebar Active!';
+                            document.body.appendChild(indicator);
+                            
+                            setTimeout(() => {
+                                if (indicator.parentNode) {
+                                    indicator.parentNode.removeChild(indicator);
+                                }
+                            }, 3000);
+                        }
+                    }
+                });
+            });
+            
+            // Start observing sidebar changes
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) {
+                observer.observe(sidebar, { attributes: true });
+            }
+        });
+    </script>
+</body>
+</html>

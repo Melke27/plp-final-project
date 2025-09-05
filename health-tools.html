@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Health Tools - Symptom checker, health tracking, medication reminders for East African communities">
+    <title>Health Tools - HealthConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/health-tools.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>HealthConnect</span>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clinic-locations.html" class="nav-link">Clinic Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-resources.html" class="nav-link">Health Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="appointment-booking.html" class="nav-link">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="community-stories.html" class="nav-link">Community Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-tools.html" class="nav-link active">Health Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="tools-hero">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1 class="hero-title">
+                        Interactive <span class="highlight">Health Tools</span>
+                    </h1>
+                    <p class="hero-description">
+                        Comprehensive health management tools designed for East African communities. 
+                        Track your health, check symptoms, manage medications, and access emergency support.
+                    </p>
+                    <div class="tools-quick-access">
+                        <button class="quick-tool-btn" data-tool="symptom-checker">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Symptom Checker</span>
+                        </button>
+                        <button class="quick-tool-btn" data-tool="health-tracker">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Health Tracker</span>
+                        </button>
+                        <button class="quick-tool-btn" data-tool="medication-reminder">
+                            <i class="fas fa-pills"></i>
+                            <span>Medication Reminders</span>
+                        </button>
+                        <button class="quick-tool-btn" data-tool="emergency-contacts">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Emergency Contacts</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Symptom Checker Section -->
+        <section id="symptom-checker" class="tool-section">
+            <div class="container">
+                <div class="tool-header" data-aos="fade-up">
+                    <h2 class="tool-title">
+                        <i class="fas fa-stethoscope"></i>
+                        Symptom Checker
+                    </h2>
+                    <p class="tool-description">
+                        Identify potential health conditions based on your symptoms. This tool provides guidance but should not replace professional medical advice.
+                    </p>
+                </div>
+
+                <div class="symptom-checker-container">
+                    <div class="symptom-input-section" data-aos="fade-right">
+                        <h3>Tell us about your symptoms</h3>
+                        <form id="symptom-form" class="symptom-form">
+                            <div class="form-group">
+                                <label for="age">Age Range</label>
+                                <select id="age" name="age" required>
+                                    <option value="">Select age range</option>
+                                    <option value="0-12">0-12 years (Child)</option>
+                                    <option value="13-17">13-17 years (Teen)</option>
+                                    <option value="18-30">18-30 years (Young Adult)</option>
+                                    <option value="31-50">31-50 years (Adult)</option>
+                                    <option value="51+">51+ years (Senior)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="primary-symptom">Primary Symptom</label>
+                                <select id="primary-symptom" name="primary-symptom" required>
+                                    <option value="">Select your main symptom</option>
+                                    <option value="fever">Fever</option>
+                                    <option value="headache">Headache</option>
+                                    <option value="cough">Cough</option>
+                                    <option value="stomach-pain">Stomach Pain</option>
+                                    <option value="chest-pain">Chest Pain</option>
+                                    <option value="difficulty-breathing">Difficulty Breathing</option>
+                                    <option value="fatigue">Fatigue</option>
+                                    <option value="diarrhea">Diarrhea</option>
+                                    <option value="vomiting">Vomiting</option>
+                                    <option value="skin-rash">Skin Rash</option>
+                                    <option value="joint-pain">Joint Pain</option>
+                                    <option value="dizziness">Dizziness</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="duration">How long have you had this symptom?</label>
+                                <select id="duration" name="duration" required>
+                                    <option value="">Select duration</option>
+                                    <option value="few-hours">A few hours</option>
+                                    <option value="1-day">1 day</option>
+                                    <option value="2-3-days">2-3 days</option>
+                                    <option value="1-week">About 1 week</option>
+                                    <option value="more-week">More than 1 week</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Additional Symptoms (Check all that apply)</label>
+                                <div class="symptom-checkboxes">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="additional-symptoms" value="fever">
+                                        <span class="checkmark"></span>
+                                        Fever
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="additional-symptoms" value="nausea">
+                                        <span class="checkmark"></span>
+                                        Nausea
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="additional-symptoms" value="weakness">
+                                        <span class="checkmark"></span>
+                                        Weakness
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="additional-symptoms" value="loss-appetite">
+                                        <span class="checkmark"></span>
+                                        Loss of Appetite
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="additional-symptoms" value="body-aches">
+                                        <span class="checkmark"></span>
+                                        Body Aches
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="additional-symptoms" value="difficulty-sleeping">
+                                        <span class="checkmark"></span>
+                                        Difficulty Sleeping
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-search"></i>
+                                Check Symptoms
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="symptom-results-section" data-aos="fade-left">
+                        <div id="symptom-results" class="symptom-results hidden">
+                            <div class="results-header">
+                                <h3>Symptom Analysis Results</h3>
+                                <div class="disclaimer">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>This is for informational purposes only. Always consult a healthcare professional for medical advice.</span>
+                                </div>
+                            </div>
+                            <div id="results-content" class="results-content">
+                                <!-- Results will be populated here -->
+                            </div>
+                        </div>
+
+                        <div class="symptom-placeholder">
+                            <i class="fas fa-clipboard-list"></i>
+                            <h4>Get Your Symptom Analysis</h4>
+                            <p>Fill out the form to receive personalized health guidance based on your symptoms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Tracker Section -->
+        <section id="health-tracker" class="tool-section alternate">
+            <div class="container">
+                <div class="tool-header" data-aos="fade-up">
+                    <h2 class="tool-title">
+                        <i class="fas fa-chart-line"></i>
+                        Personal Health Tracker
+                    </h2>
+                    <p class="tool-description">
+                        Monitor your vital signs, symptoms, and overall health trends over time.
+                    </p>
+                </div>
+
+                <div class="health-tracker-container">
+                    <div class="tracker-sidebar" data-aos="fade-right">
+                        <div class="tracker-nav">
+                            <button class="tracker-nav-btn active" data-section="vitals">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Vital Signs</span>
+                            </button>
+                            <button class="tracker-nav-btn" data-section="symptoms">
+                                <i class="fas fa-thermometer"></i>
+                                <span>Symptoms Log</span>
+                            </button>
+                            <button class="tracker-nav-btn" data-section="weight">
+                                <i class="fas fa-weight"></i>
+                                <span>Weight Tracking</span>
+                            </button>
+                            <button class="tracker-nav-btn" data-section="mood">
+                                <i class="fas fa-smile"></i>
+                                <span>Mood & Sleep</span>
+                            </button>
+                        </div>
+
+                        <div class="health-summary">
+                            <h4>Health Summary</h4>
+                            <div class="summary-stats">
+                                <div class="summary-stat">
+                                    <span class="stat-value" id="total-entries">0</span>
+                                    <span class="stat-label">Total Entries</span>
+                                </div>
+                                <div class="summary-stat">
+                                    <span class="stat-value" id="streak-days">0</span>
+                                    <span class="stat-label">Day Streak</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tracker-content" data-aos="fade-left">
+                        <!-- Vitals Section -->
+                        <div id="vitals-section" class="tracker-section active">
+                            <h3>Record Vital Signs</h3>
+                            <form id="vitals-form" class="tracker-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="blood-pressure-systolic">Blood Pressure (Systolic)</label>
+                                        <input type="number" id="blood-pressure-systolic" name="bp-systolic" min="80" max="200" placeholder="120">
+                                        <span class="unit">mmHg</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="blood-pressure-diastolic">Blood Pressure (Diastolic)</label>
+                                        <input type="number" id="blood-pressure-diastolic" name="bp-diastolic" min="40" max="120" placeholder="80">
+                                        <span class="unit">mmHg</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="heart-rate">Heart Rate</label>
+                                        <input type="number" id="heart-rate" name="heart-rate" min="40" max="200" placeholder="72">
+                                        <span class="unit">bpm</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="temperature">Body Temperature</label>
+                                        <input type="number" id="temperature" name="temperature" min="35" max="42" step="0.1" placeholder="36.5">
+                                        <span class="unit">°C</span>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i>
+                                    Save Vitals
+                                </button>
+                            </form>
+
+                            <div class="vitals-chart">
+                                <h4>Recent Vital Signs</h4>
+                                <div id="vitals-chart-container" class="chart-container">
+                                    <canvas id="vitals-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Symptoms Section -->
+                        <div id="symptoms-section" class="tracker-section">
+                            <h3>Log Daily Symptoms</h3>
+                            <form id="symptoms-log-form" class="tracker-form">
+                                <div class="form-group">
+                                    <label for="symptom-type">Symptom Type</label>
+                                    <select id="symptom-type" name="symptom-type" required>
+                                        <option value="">Select symptom</option>
+                                        <option value="headache">Headache</option>
+                                        <option value="fatigue">Fatigue</option>
+                                        <option value="pain">Pain</option>
+                                        <option value="nausea">Nausea</option>
+                                        <option value="dizziness">Dizziness</option>
+                                        <option value="fever">Fever</option>
+                                        <option value="cough">Cough</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Severity Level</label>
+                                    <div class="severity-scale">
+                                        <input type="range" id="severity" name="severity" min="1" max="10" value="5" class="severity-slider">
+                                        <div class="severity-labels">
+                                            <span>Mild</span>
+                                            <span>Moderate</span>
+                                            <span>Severe</span>
+                                        </div>
+                                        <div class="severity-value">
+                                            <span id="severity-display">5</span>/10
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="symptom-notes">Additional Notes</label>
+                                    <textarea id="symptom-notes" name="symptom-notes" rows="3" placeholder="Describe your symptoms in detail..."></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i>
+                                    Log Symptom
+                                </button>
+                            </form>
+
+                            <div class="symptoms-history">
+                                <h4>Recent Symptom Logs</h4>
+                                <div id="symptoms-list" class="symptoms-list">
+                                    <!-- Symptom entries will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Weight Tracking Section -->
+                        <div id="weight-section" class="tracker-section">
+                            <h3>Weight & BMI Tracking</h3>
+                            <form id="weight-form" class="tracker-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="weight">Weight</label>
+                                        <input type="number" id="weight" name="weight" min="20" max="300" step="0.1" placeholder="70" required>
+                                        <span class="unit">kg</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="height">Height</label>
+                                        <input type="number" id="height" name="height" min="100" max="250" placeholder="170" required>
+                                        <span class="unit">cm</span>
+                                    </div>
+                                </div>
+
+                                <div class="bmi-display">
+                                    <div class="bmi-result">
+                                        <span class="bmi-value" id="bmi-value">--</span>
+                                        <span class="bmi-category" id="bmi-category">Enter your measurements</span>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i>
+                                    Save Weight
+                                </button>
+                            </form>
+
+                            <div class="weight-chart">
+                                <h4>Weight Progress</h4>
+                                <div id="weight-chart-container" class="chart-container">
+                                    <canvas id="weight-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mood & Sleep Section -->
+                        <div id="mood-section" class="tracker-section">
+                            <h3>Mood & Sleep Tracking</h3>
+                            <form id="mood-form" class="tracker-form">
+                                <div class="form-group">
+                                    <label>How are you feeling today?</label>
+                                    <div class="mood-selector">
+                                        <button type="button" class="mood-btn" data-mood="1" data-label="Very Bad">
+                                            <i class="fas fa-frown"></i>
+                                            <span>Very Bad</span>
+                                        </button>
+                                        <button type="button" class="mood-btn" data-mood="2" data-label="Bad">
+                                            <i class="fas fa-frown-open"></i>
+                                            <span>Bad</span>
+                                        </button>
+                                        <button type="button" class="mood-btn" data-mood="3" data-label="Okay">
+                                            <i class="fas fa-meh"></i>
+                                            <span>Okay</span>
+                                        </button>
+                                        <button type="button" class="mood-btn" data-mood="4" data-label="Good">
+                                            <i class="fas fa-smile"></i>
+                                            <span>Good</span>
+                                        </button>
+                                        <button type="button" class="mood-btn" data-mood="5" data-label="Excellent">
+                                            <i class="fas fa-laugh-beam"></i>
+                                            <span>Excellent</span>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" id="selected-mood" name="mood" value="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sleep-hours">Hours of Sleep Last Night</label>
+                                    <input type="number" id="sleep-hours" name="sleep-hours" min="1" max="16" step="0.5" placeholder="8">
+                                    <span class="unit">hours</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sleep-quality">Sleep Quality</label>
+                                    <select id="sleep-quality" name="sleep-quality">
+                                        <option value="">Rate your sleep quality</option>
+                                        <option value="poor">Poor</option>
+                                        <option value="fair">Fair</option>
+                                        <option value="good">Good</option>
+                                        <option value="excellent">Excellent</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i>
+                                    Save Mood & Sleep
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medication Reminder Section -->
+        <section id="medication-reminder" class="tool-section">
+            <div class="container">
+                <div class="tool-header" data-aos="fade-up">
+                    <h2 class="tool-title">
+                        <i class="fas fa-pills"></i>
+                        Medication Reminders
+                    </h2>
+                    <p class="tool-description">
+                        Never miss a dose with our smart medication reminder system. Set up personalized schedules for all your medications.
+                    </p>
+                </div>
+
+                <div class="medication-container">
+                    <div class="add-medication-section" data-aos="fade-right">
+                        <h3>Add New Medication</h3>
+                        <form id="medication-form" class="medication-form">
+                            <div class="form-group">
+                                <label for="medication-name">Medication Name</label>
+                                <input type="text" id="medication-name" name="medication-name" placeholder="e.g., Paracetamol" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="dosage">Dosage</label>
+                                    <input type="text" id="dosage" name="dosage" placeholder="e.g., 500mg" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="frequency">Frequency</label>
+                                    <select id="frequency" name="frequency" required>
+                                        <option value="">Select frequency</option>
+                                        <option value="once-daily">Once daily</option>
+                                        <option value="twice-daily">Twice daily</option>
+                                        <option value="three-times">Three times daily</option>
+                                        <option value="four-times">Four times daily</option>
+                                        <option value="as-needed">As needed</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="medication-times">Reminder Times</label>
+                                <div id="time-inputs" class="time-inputs">
+                                    <input type="time" class="time-input" value="08:00">
+                                </div>
+                                <button type="button" id="add-time" class="btn btn-outline btn-small">
+                                    <i class="fas fa-plus"></i>
+                                    Add Time
+                                </button>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="medication-notes">Instructions/Notes</label>
+                                <textarea id="medication-notes" name="medication-notes" rows="2" placeholder="Take with food, etc."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Add Medication
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="medications-list-section" data-aos="fade-left">
+                        <h3>Your Medications</h3>
+                        <div id="medications-list" class="medications-list">
+                            <!-- Medication items will be populated here -->
+                        </div>
+
+                        <div class="medication-placeholder">
+                            <i class="fas fa-prescription-bottle"></i>
+                            <h4>No Medications Added</h4>
+                            <p>Add your first medication to start tracking your medication schedule.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Medication Schedule -->
+                <div class="todays-schedule" data-aos="fade-up">
+                    <h3>Today's Medication Schedule</h3>
+                    <div id="todays-medications" class="todays-medications">
+                        <!-- Today's schedule will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Contacts Section -->
+        <section id="emergency-contacts" class="tool-section alternate">
+            <div class="container">
+                <div class="tool-header" data-aos="fade-up">
+                    <h2 class="tool-title">
+                        <i class="fas fa-phone-alt"></i>
+                        Emergency Contacts & Support
+                    </h2>
+                    <p class="tool-description">
+                        Quick access to emergency services, healthcare providers, and support contacts across East Africa.
+                    </p>
+                </div>
+
+                <div class="emergency-container">
+                    <!-- Emergency Numbers by Country -->
+                    <div class="emergency-numbers" data-aos="fade-up">
+                        <h3>Emergency Numbers by Country</h3>
+                        <div class="emergency-grid">
+                            <div class="emergency-country">
+                                <div class="country-header">
+                                    <span class="country-flag">🇪🇹</span>
+                                    <h4>Ethiopia</h4>
+                                </div>
+                                <div class="emergency-contacts">
+                                    <a href="tel:911" class="emergency-contact">
+                                        <i class="fas fa-ambulance"></i>
+                                        <span>Emergency: 911</span>
+                                    </a>
+                                    <a href="tel:997" class="emergency-contact">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Police: 997</span>
+                                    </a>
+                                    <a href="tel:939" class="emergency-contact">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Fire: 939</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="emergency-country">
+                                <div class="country-header">
+                                    <span class="country-flag">🇰🇪</span>
+                                    <h4>Kenya</h4>
+                                </div>
+                                <div class="emergency-contacts">
+                                    <a href="tel:999" class="emergency-contact">
+                                        <i class="fas fa-ambulance"></i>
+                                        <span>Emergency: 999</span>
+                                    </a>
+                                    <a href="tel:999" class="emergency-contact">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Police: 999</span>
+                                    </a>
+                                    <a href="tel:999" class="emergency-contact">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Fire: 999</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="emergency-country">
+                                <div class="country-header">
+                                    <span class="country-flag">🇺🇬</span>
+                                    <h4>Uganda</h4>
+                                </div>
+                                <div class="emergency-contacts">
+                                    <a href="tel:999" class="emergency-contact">
+                                        <i class="fas fa-ambulance"></i>
+                                        <span>Emergency: 999</span>
+                                    </a>
+                                    <a href="tel:999" class="emergency-contact">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Police: 999</span>
+                                    </a>
+                                    <a href="tel:999" class="emergency-contact">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Fire: 999</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="emergency-country">
+                                <div class="country-header">
+                                    <span class="country-flag">🇹🇿</span>
+                                    <h4>Tanzania</h4>
+                                </div>
+                                <div class="emergency-contacts">
+                                    <a href="tel:112" class="emergency-contact">
+                                        <i class="fas fa-ambulance"></i>
+                                        <span>Emergency: 112</span>
+                                    </a>
+                                    <a href="tel:999" class="emergency-contact">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Police: 999</span>
+                                    </a>
+                                    <a href="tel:999" class="emergency-contact">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Fire: 999</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="emergency-country">
+                                <div class="country-header">
+                                    <span class="country-flag">🇷🇼</span>
+                                    <h4>Rwanda</h4>
+                                </div>
+                                <div class="emergency-contacts">
+                                    <a href="tel:112" class="emergency-contact">
+                                        <i class="fas fa-ambulance"></i>
+                                        <span>Emergency: 112</span>
+                                    </a>
+                                    <a href="tel:113" class="emergency-contact">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Police: 113</span>
+                                    </a>
+                                    <a href="tel:113" class="emergency-contact">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Fire: 113</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="emergency-country">
+                                <div class="country-header">
+                                    <span class="country-flag">🇧🇮</span>
+                                    <h4>Burundi</h4>
+                                </div>
+                                <div class="emergency-contacts">
+                                    <a href="tel:112" class="emergency-contact">
+                                        <i class="fas fa-ambulance"></i>
+                                        <span>Emergency: 112</span>
+                                    </a>
+                                    <a href="tel:117" class="emergency-contact">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Police: 117</span>
+                                    </a>
+                                    <a href="tel:118" class="emergency-contact">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Fire: 118</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Emergency Contacts -->
+                    <div class="personal-contacts" data-aos="fade-up">
+                        <h3>Personal Emergency Contacts</h3>
+                        <div class="personal-contacts-container">
+                            <div class="add-contact-section">
+                                <form id="emergency-contact-form" class="contact-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="contact-name">Contact Name</label>
+                                            <input type="text" id="contact-name" name="contact-name" placeholder="Dr. John Doe" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-relationship">Relationship</label>
+                                            <select id="contact-relationship" name="contact-relationship" required>
+                                                <option value="">Select relationship</option>
+                                                <option value="family-doctor">Family Doctor</option>
+                                                <option value="specialist">Specialist</option>
+                                                <option value="family-member">Family Member</option>
+                                                <option value="friend">Friend</option>
+                                                <option value="neighbor">Neighbor</option>
+                                                <option value="hospital">Hospital</option>
+                                                <option value="pharmacy">Pharmacy</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="contact-phone">Phone Number</label>
+                                            <input type="tel" id="contact-phone" name="contact-phone" placeholder="+251-9-XXXXXXXX" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contact-location">Location/Address</label>
+                                            <input type="text" id="contact-location" name="contact-location" placeholder="City, Region">
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-user-plus"></i>
+                                        Add Contact
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div class="contacts-list">
+                                <h4>Your Emergency Contacts</h4>
+                                <div id="personal-contacts-list" class="contacts-list-container">
+                                    <!-- Personal contacts will be populated here -->
+                                </div>
+
+                                <div class="contacts-placeholder">
+                                    <i class="fas fa-address-book"></i>
+                                    <h4>No Emergency Contacts Added</h4>
+                                    <p>Add your emergency contacts to have quick access during health emergencies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Emergency Actions -->
+                    <div class="emergency-actions" data-aos="fade-up">
+                        <h3>Quick Emergency Actions</h3>
+                        <div class="emergency-actions-grid">
+                            <button class="emergency-action-btn" id="call-ambulance">
+                                <i class="fas fa-ambulance"></i>
+                                <span>Call Ambulance</span>
+                                <small>Immediate medical emergency</small>
+                            </button>
+                            
+                            <button class="emergency-action-btn" id="find-nearest-hospital">
+                                <i class="fas fa-hospital"></i>
+                                <span>Find Nearest Hospital</span>
+                                <small>Locate nearby healthcare facilities</small>
+                            </button>
+                            
+                            <button class="emergency-action-btn" id="emergency-book-appointment">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>Emergency Appointment</span>
+                                <small>Book urgent medical consultation</small>
+                            </button>
+                            
+                            <button class="emergency-action-btn" id="share-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Share Location</span>
+                                <small>Share your location with contacts</small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Tips Section -->
+        <section class="health-tips-section">
+            <div class="container">
+                <div class="tool-header" data-aos="fade-up">
+                    <h2 class="tool-title">
+                        <i class="fas fa-lightbulb"></i>
+                        Daily Health Tips
+                    </h2>
+                    <p class="tool-description">
+                        Personalized health recommendations based on your tracked data and regional health concerns.
+                    </p>
+                </div>
+
+                <div class="health-tips-grid" data-aos="fade-up">
+                    <div class="health-tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4>Stay Hydrated</h4>
+                        <p>Drink at least 8 glasses of clean water daily, especially important in East Africa's climate.</p>
+                        <div class="tip-category">Preventive Care</div>
+                    </div>
+
+                    <div class="health-tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <h4>Quality Sleep</h4>
+                        <p>Aim for 7-9 hours of sleep nightly to support your immune system and overall health.</p>
+                        <div class="tip-category">Wellness</div>
+                    </div>
+
+                    <div class="health-tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>Balanced Nutrition</h4>
+                        <p>Include local foods like injera, ugali, and fresh vegetables for balanced nutrition.</p>
+                        <div class="tip-category">Nutrition</div>
+                    </div>
+
+                    <div class="health-tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h4>Regular Exercise</h4>
+                        <p>Stay active with 30 minutes of physical activity daily - walking, dancing, or traditional sports.</p>
+                        <div class="tip-category">Fitness</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Bridging healthcare accessibility gaps in remote and underserved communities 
+                        through technology and mobile health solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/melkamu-wako-536174318/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/melke27" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://melkamuwako27.netlify.app/" target="_blank" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+                        <a href="https://t.me/kidn16" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/ruf.2316/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@MelkamuWako-f3v" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="mailto:melkamuwako5@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="clinic-locations.html">Find Clinics</a></li>
+                        <li><a href="partner-hospitals.html">Partner Hospitals</a></li>
+                        <li><a href="health-resources.html">Health Resources</a></li>
+                        <li><a href="appointment-booking.html">Book Appointment</a></li>
+                        <li><a href="health-tools.html">Health Tools</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Health Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="health-resources.html#prevention">Disease Prevention</a></li>
+                        <li><a href="health-resources.html#maternal">Maternal Health</a></li>
+                        <li><a href="health-resources.html#child">Child Health</a></li>
+                        <li><a href="health-resources.html#emergency">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Get Updates</h4>
+                    <p>Stay informed about mobile clinic schedules and health tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 HealthConnect. All rights reserved. | 
+                       <a href="#privacy">Privacy Policy</a> | 
+                       <a href="#terms">Terms of Service</a>
+                    </p>
+                    <div class="developer-credit">
+                        <p>Developed by <a href="https://melkamuwako27.netlify.app/" target="_blank" class="developer-link">
+                            <i class="fas fa-code"></i> Melkamu Wako
+                        </a> - Computer Science Student at ASTU</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Medication Reminder Modal -->
+    <div id="medication-reminder-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>
+                    <i class="fas fa-bell"></i>
+                    Medication Reminder
+                </h3>
+                <button class="modal-close" id="close-reminder-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="reminder-content">
+                    <div class="medication-info">
+                        <h4 id="reminder-medication-name">Medication Name</h4>
+                        <p id="reminder-dosage">Dosage information</p>
+                        <p id="reminder-instructions">Instructions</p>
+                    </div>
+                    <div class="reminder-actions">
+                        <button class="btn btn-success" id="mark-taken">
+                            <i class="fas fa-check"></i>
+                            Mark as Taken
+                        </button>
+                        <button class="btn btn-outline" id="snooze-reminder">
+                            <i class="fas fa-clock"></i>
+                            Snooze (10 min)
+                        </button>
+                        <button class="btn btn-danger" id="skip-dose">
+                            <i class="fas fa-times"></i>
+                            Skip This Dose
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Alert Modal -->
+    <div id="emergency-alert-modal" class="modal hidden">
+        <div class="modal-content emergency-modal">
+            <div class="modal-header emergency-header">
+                <h3>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Emergency Alert
+                </h3>
+            </div>
+            <div class="modal-body">
+                <div class="emergency-alert-content">
+                    <p>Are you experiencing a medical emergency?</p>
+                    <div class="emergency-options">
+                        <button class="btn btn-danger btn-large" id="call-emergency">
+                            <i class="fas fa-phone"></i>
+                            Call Emergency Services
+                        </button>
+                        <button class="btn btn-outline" id="find-hospital">
+                            <i class="fas fa-hospital"></i>
+                            Find Nearest Hospital
+                        </button>
+                        <button class="btn btn-outline" id="cancel-emergency">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loading-spinner hidden">
+        <div class="spinner">
+            <i class="fas fa-heartbeat"></i>
+        </div>
+        <p>Processing your health data...</p>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/health-tools.js"></script>
+</body>
+</html>

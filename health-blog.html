@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Health Blog - Latest health news, tips, and educational content for East African communities">
+    <title>Health Blog & News - HealthConnect</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enhanced-navigation.css">
+    <link rel="stylesheet" href="css/navigation-components.css">
+    <link rel="stylesheet" href="css/health-blog.css">
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="HealthConnect">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <!-- Enhanced Navigation will be injected by JavaScript -->
+    
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <i class="fas fa-newspaper"></i>
+                    Health Blog & News
+                </h1>
+                <p class="hero-subtitle">
+                    Stay informed with the latest health tips, medical news, and educational content 
+                    tailored for East African communities
+                </p>
+                <div class="hero-search">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="blog-search" placeholder="Search health topics, diseases, tips...">
+                        <button type="button" id="search-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="featured-articles">
+        <div class="container">
+            <h2 class="section-title">Featured Articles</h2>
+            <div class="featured-grid">
+                <article class="featured-article main-feature">
+                    <div class="article-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div class="article-category">Prevention</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Malaria Prevention in East Africa: Essential Guide for 2024</h3>
+                        <p class="article-excerpt">
+                            Learn about the latest malaria prevention strategies, including bed net usage, 
+                            mosquito control, and new prevention medications available in Kenya, Uganda, and Tanzania.
+                        </p>
+                        <div class="article-meta">
+                            <span class="article-date">
+                                <i class="fas fa-calendar"></i>
+                                December 15, 2024
+                            </span>
+                            <span class="article-reading-time">
+                                <i class="fas fa-clock"></i>
+                                8 min read
+                            </span>
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Malaria</span>
+                            <span class="tag">Prevention</span>
+                            <span class="tag">East Africa</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="featured-article">
+                    <div class="article-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="article-category">Maternal Health</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Maternal Health: Safe Pregnancy Guidelines</h3>
+                        <p class="article-excerpt">
+                            Essential prenatal care tips and nutrition guidelines for expectant mothers in rural communities.
+                        </p>
+                        <div class="article-meta">
+                            <span class="article-date">
+                                <i class="fas fa-calendar"></i>
+                                December 12, 2024
+                            </span>
+                            <span class="article-reading-time">
+                                <i class="fas fa-clock"></i>
+                                6 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="featured-article">
+                    <div class="article-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="article-category">Chronic Diseases</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Managing Diabetes in Resource-Limited Settings</h3>
+                        <p class="article-excerpt">
+                            Practical strategies for diabetes management when access to healthcare is limited.
+                        </p>
+                        <div class="article-meta">
+                            <span class="article-date">
+                                <i class="fas fa-calendar"></i>
+                                December 10, 2024
+                            </span>
+                            <span class="article-reading-time">
+                                <i class="fas fa-clock"></i>
+                                10 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Filter -->
+    <section class="blog-categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-th-large"></i>
+                    All Articles
+                </button>
+                <button class="category-btn" data-category="prevention">
+                    <i class="fas fa-shield-alt"></i>
+                    Disease Prevention
+                </button>
+                <button class="category-btn" data-category="maternal">
+                    <i class="fas fa-baby"></i>
+                    Maternal Health
+                </button>
+                <button class="category-btn" data-category="child">
+                    <i class="fas fa-child"></i>
+                    Child Health
+                </button>
+                <button class="category-btn" data-category="nutrition">
+                    <i class="fas fa-apple-alt"></i>
+                    Nutrition
+                </button>
+                <button class="category-btn" data-category="mental">
+                    <i class="fas fa-brain"></i>
+                    Mental Health
+                </button>
+                <button class="category-btn" data-category="emergency">
+                    <i class="fas fa-first-aid"></i>
+                    Emergency Care
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="articles-section">
+        <div class="container">
+            <div class="articles-grid" id="articles-grid">
+                <!-- Articles will be populated by JavaScript -->
+            </div>
+            
+            <div class="load-more-container">
+                <button class="btn btn-outline load-more-btn" id="load-more">
+                    <i class="fas fa-plus"></i>
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Updated on Health News</h2>
+                    <p>Get the latest health tips, disease alerts, and medical news delivered to your inbox weekly.</p>
+                </div>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="newsletter-terms" required>
+                        <label for="newsletter-terms">
+                            I agree to receive health updates and newsletters from HealthConnect
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Tips Widget -->
+    <section class="health-tips-widget">
+        <div class="container">
+            <h2 class="section-title">Daily Health Tips</h2>
+            <div class="tips-carousel" id="tips-carousel">
+                <!-- Tips will be populated by JavaScript -->
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" id="tips-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-indicators" id="tips-indicators">
+                    <!-- Indicators will be populated by JavaScript -->
+                </div>
+                <button class="carousel-btn next" id="tips-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Bridging healthcare accessibility gaps in remote and underserved communities 
+                        through technology and mobile health solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/melkamu-wako-536174318/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/melke27" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://melkamuwako27.netlify.app/" target="_blank" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+                        <a href="https://t.me/kidn16" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/ruf.2316/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@MelkamuWako-f3v" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://x.com/melkamu_wako" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="mailto:melkamuwako5@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Health Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#prevention">Disease Prevention</a></li>
+                        <li><a href="#maternal">Maternal Health</a></li>
+                        <li><a href="#child">Child Health</a></li>
+                        <li><a href="#nutrition">Nutrition</a></li>
+                        <li><a href="#mental">Mental Health</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="health-tools.html">Health Tools</a></li>
+                        <li><a href="clinic-locations.html">Find Clinics</a></li>
+                        <li><a href="appointment-booking.html">Book Appointment</a></li>
+                        <li><a href="contact.html">Emergency Contacts</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:melkamuwako5@gmail.com">Email Support</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 HealthConnect. All rights reserved.</p>
+                    <div class="developer-credit">
+                        <p>Developed by <a href="https://melkamuwako27.netlify.app/" target="_blank" class="developer-link">
+                            <i class="fas fa-code"></i> Melkamu Wako
+                        </a> - Computer Science Student at ASTU</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/enhanced-navigation.js"></script>
+    <script src="js/health-blog.js"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

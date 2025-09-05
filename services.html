@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Healthcare Services - Mobile clinics, telemedicine, and health resources for East African communities">
+    <title>Our Services - HealthConnect</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enhanced-navigation.css">
+    <link rel="stylesheet" href="css/navigation-components.css">
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="HealthConnect">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    
+    <style>
+        /* Services page specific styles */
+        .services-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+            opacity: 0.3;
+        }
+        
+        .services-hero .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .services-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: slideInUp 0.8s ease-out;
+        }
+        
+        .services-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .services-grid {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-header {
+            padding: 40px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            color: white;
+            text-align: center;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .service-subtitle {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .service-content {
+            padding: 40px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: #64748b;
+        }
+        
+        .service-features li i {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+        
+        .service-action {
+            margin-top: 30px;
+        }
+        
+        .btn-service {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-teal));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-service:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+        
+        .stats-section {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            padding: 30px 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .service-header {
+                padding: 30px;
+            }
+            
+            .service-content {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Navigation will be injected by JavaScript -->
+    
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our Healthcare Services</h1>
+                <p>
+                    Comprehensive healthcare solutions designed to serve East African communities 
+                    with mobile clinics, telemedicine, and accessible health resources.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="services-container">
+                
+                <!-- Mobile Health Clinics -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-truck-medical"></i>
+                        </div>
+                        <h3 class="service-title">Mobile Health Clinics</h3>
+                        <p class="service-subtitle">Bringing healthcare directly to your community</p>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Regular scheduled visits to remote areas</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Basic medical consultations and checkups</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Vaccination and immunization programs</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Maternal and child health services</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Health education and awareness</span>
+                            </li>
+                        </ul>
+                        <div class="service-action">
+                            <a href="clinic-locations.html" class="btn-service">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Find Clinics
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Telemedicine Services -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="service-title">Telemedicine</h3>
+                        <p class="service-subtitle">Remote consultations via video calls</p>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Video consultations with qualified doctors</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Prescription and medication guidance</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Follow-up care and monitoring</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Mental health counseling services</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Available in local languages</span>
+                            </li>
+                        </ul>
+                        <div class="service-action">
+                            <a href="appointment-booking.html" class="btn-service">
+                                <i class="fas fa-calendar-plus"></i>
+                                Book Consultation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Education -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="service-title">Health Education</h3>
+                        <p class="service-subtitle">Knowledge and resources for better health</p>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Disease prevention workshops</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Nutrition and healthy living guides</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Community health training programs</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Health resource library</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Multilingual educational materials</span>
+                            </li>
+                        </ul>
+                        <div class="service-action">
+                            <a href="health-resources.html" class="btn-service">
+                                <i class="fas fa-book-open"></i>
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Services -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <h3 class="service-title">Emergency Services</h3>
+                        <p class="service-subtitle">24/7 emergency response and support</p>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>24/7 emergency hotline</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Emergency medical transport</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>First aid training and kits</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Disaster response coordination</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Community emergency preparedness</span>
+                            </li>
+                        </ul>
+                        <div class="service-action">
+                            <a href="contact.html" class="btn-service">
+                                <i class="fas fa-phone"></i>
+                                Emergency Contacts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Monitoring -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="service-title">Health Monitoring</h3>
+                        <p class="service-subtitle">Track and manage your health digitally</p>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Digital health records</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Symptom tracking and analysis</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Medication reminders</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Health progress reports</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Chronic disease management</span>
+                            </li>
+                        </ul>
+                        <div class="service-action">
+                            <a href="health-tools.html" class="btn-service">
+                                <i class="fas fa-tools"></i>
+                                Health Tools
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Outreach -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="service-title">Community Outreach</h3>
+                        <p class="service-subtitle">Building healthier communities together</p>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-features">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Community health worker training</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Health awareness campaigns</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Peer support groups</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Public health initiatives</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Partnership with local organizations</span>
+                            </li>
+                        </ul>
+                        <div class="service-action">
+                            <a href="community-stories.html" class="btn-service">
+                                <i class="fas fa-heart"></i>
+                                Community Stories
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">Our Impact in Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">25,000+</span>
+                    <span class="stat-label">Patients Served</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Communities Reached</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Health Workers Trained</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Countries Served</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Bridging healthcare accessibility gaps in remote and underserved communities 
+                        through technology and mobile health solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/melkamu-wako-536174318/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/melke27" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://melkamuwako27.netlify.app/" target="_blank" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+                        <a href="https://t.me/kidn16" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/ruf.2316/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@MelkamuWako-f3v" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://x.com/melkamu_wako" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="mailto:melkamuwako5@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="clinic-locations.html">Mobile Clinics</a></li>
+                        <li><a href="appointment-booking.html">Telemedicine</a></li>
+                        <li><a href="health-resources.html">Health Education</a></li>
+                        <li><a href="contact.html">Emergency Services</a></li>
+                        <li><a href="health-tools.html">Health Monitoring</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="health-blog.html">Health Blog</a></li>
+                        <li><a href="health-tools.html">Health Tools</a></li>
+                        <li><a href="community-stories.html">Community Stories</a></li>
+                        <li><a href="partner-hospitals.html">Partner Hospitals</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:melkamuwako5@gmail.com">Email Support</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 HealthConnect. All rights reserved.</p>
+                    <div class="developer-credit">
+                        <p>Developed by <a href="https://melkamuwako27.netlify.app/" target="_blank" class="developer-link">
+                            <i class="fas fa-code"></i> Melkamu Wako
+                        </a> - Computer Science Student at ASTU</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/enhanced-navigation.js"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

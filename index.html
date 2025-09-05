@@ -5,47 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mobile Health Clinics - Bridging healthcare accessibility gaps in remote communities">
     <title>Mobile Health Clinics - Healthcare for All</title>
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Core Design System (Primary) -->
+    <link rel="stylesheet" href="css/design-system.css">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="HealthConnect">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
-    <!-- Navigation Header -->
+    <!-- Simple Clean Header -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
-                <div class="nav-logo">
+                <!-- Logo -->
+                <a href="index.html" class="nav-logo">
                     <i class="fas fa-heartbeat"></i>
                     <span>HealthConnect</span>
-                </div>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                </button>
-                
-                <!-- Navigation Menu -->
-                <ul class="nav-menu" id="nav-menu">
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="index.html" class="nav-link active">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="clinic-locations.html" class="nav-link">Clinic Locations</a>
+                        <a href="clinic-locations.html" class="nav-link">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Find Clinics</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="health-resources.html" class="nav-link">Health Resources</a>
+                        <a href="appointment-booking.html" class="nav-link">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Book</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="appointment-booking.html" class="nav-link">Book Appointment</a>
+                        <a href="health-resources.html" class="nav-link">
+                            <i class="fas fa-book-medical"></i>
+                            <span>Resources</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="health-tools.html" class="nav-link">
+                            <i class="fas fa-tools"></i>
+                            <span>Tools</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
                     </li>
                 </ul>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
     </header>
@@ -348,7 +382,7 @@
                                 <i class="fas fa-user"></i>
                                 View Portfolio
                             </a>
-                            <a href="https://github.com/melkamuwako27" target="_blank" class="btn btn-outline">
+                            <a href="https://github.com/melke27" target="_blank" class="btn btn-outline">
                                 <i class="fab fa-github"></i>
                                 GitHub Profile
                             </a>
@@ -409,10 +443,14 @@
                         through technology and mobile health solutions.
                     </p>
                     <div class="social-links">
-                        <a href="https://facebook.com/melkamu.wako" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://twitter.com/melkamu_wako" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://linkedin.com/in/melkamu-wako" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/melkamuwako27" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/melkamu-wako-536174318/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/melke27" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://melkamuwako27.netlify.app/" target="_blank" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+                        <a href="https://t.me/kidn16" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/ruf.2316/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@MelkamuWako-f3v" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://x.com/melkamu_wako" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                        <a href="mailto:melkamuwako5@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
@@ -421,6 +459,7 @@
                     <ul class="footer-links">
                         <li><a href="clinic-locations.html">Find Clinics</a></li>
                         <li><a href="health-resources.html">Health Resources</a></li>
+                        <li><a href="health-tools.html">Health Tools</a></li>
                         <li><a href="appointment-booking.html">Book Appointment</a></li>
                         <li><a href="contact.html">Contact Support</a></li>
                     </ul>
@@ -464,5 +503,37 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <!-- Animation System -->
+    <script src="js/animation-system.js"></script>
+    <script src="js/script.js"></script>
+    
+    <!-- Simple Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>

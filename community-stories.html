@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Community Stories from East Africa - Real testimonials from HealthConnect users across the region">
+    <title>Community Stories - HealthConnect</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/community-stories.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>HealthConnect</span>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clinic-locations.html" class="nav-link">Clinic Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="health-resources.html" class="nav-link">Health Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="appointment-booking.html" class="nav-link">Book Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="community-stories.html" class="nav-link active">Community Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="stories-hero">
+            <div class="container">
+                <div class="hero-content-animated" data-aos="fade-up">
+                    <h1 class="hero-title">
+                        Community <span class="highlight">Stories</span>
+                    </h1>
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                        Real stories of hope, healing, and health transformation from communities 
+                        across East Africa. Discover how HealthConnect is making a difference in lives.
+                    </p>
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                        <div class="hero-stat">
+                            <span class="stat-number" data-target="8">0</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number" data-target="200">0</span>
+                            <span class="stat-label">Stories Shared</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number" data-target="150000">0</span>
+                            <span class="stat-label">Lives Touched</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Country Filter Section -->
+        <section class="country-filter-section">
+            <div class="container">
+                <div class="filter-container" data-aos="fade-up">
+                    <h2>Filter Stories by Country</h2>
+                    <div class="country-filters">
+                        <button class="country-filter active" data-country="all">
+                            <i class="fas fa-globe-africa"></i>
+                            All Countries
+                        </button>
+                        <button class="country-filter" data-country="ethiopia">
+                            <span class="flag">🇪🇹</span>
+                            Ethiopia
+                        </button>
+                        <button class="country-filter" data-country="kenya">
+                            <span class="flag">🇰🇪</span>
+                            Kenya
+                        </button>
+                        <button class="country-filter" data-country="uganda">
+                            <span class="flag">🇺🇬</span>
+                            Uganda
+                        </button>
+                        <button class="country-filter" data-country="tanzania">
+                            <span class="flag">🇹🇿</span>
+                            Tanzania
+                        </button>
+                        <button class="country-filter" data-country="rwanda">
+                            <span class="flag">🇷🇼</span>
+                            Rwanda
+                        </button>
+                        <button class="country-filter" data-country="burundi">
+                            <span class="flag">🇧🇮</span>
+                            Burundi
+                        </button>
+                        <button class="country-filter" data-country="somalia">
+                            <span class="flag">🇸🇴</span>
+                            Somalia
+                        </button>
+                        <button class="country-filter" data-country="south-sudan">
+                            <span class="flag">🇸🇸</span>
+                            South Sudan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Stories Section -->
+        <section class="featured-stories">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Featured Community Stories</h2>
+                <div class="featured-grid">
+                    <!-- Story 1 - Ethiopia -->
+                    <div class="featured-story-card" data-country="ethiopia" data-aos="fade-up" data-aos-delay="100">
+                        <div class="story-header">
+                            <div class="story-country">
+                                <span class="flag">🇪🇹</span>
+                                <span>Ethiopia</span>
+                            </div>
+                            <div class="story-category health-education">Health Education</div>
+                        </div>
+                        <div class="story-content">
+                            <blockquote>
+                                "HealthConnect saved my life. When I experienced chest pain in our remote village in Oromia, 
+                                the app helped me find the nearest mobile clinic. The doctors diagnosed my heart condition 
+                                early and connected me with Tikur Anbessa Hospital in Addis Ababa. Without this platform, 
+                                I might not have gotten help in time."
+                            </blockquote>
+                            <div class="story-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Alemayehu Tadesse</h4>
+                                    <p>Farmer, Oromia Region</p>
+                                    <div class="story-impact">
+                                        <i class="fas fa-heart"></i>
+                                        <span>Life-saving diagnosis</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story 2 - Kenya -->
+                    <div class="featured-story-card" data-country="kenya" data-aos="fade-up" data-aos-delay="200">
+                        <div class="story-header">
+                            <div class="story-country">
+                                <span class="flag">🇰🇪</span>
+                                <span>Kenya</span>
+                            </div>
+                            <div class="story-category maternal-care">Maternal Care</div>
+                        </div>
+                        <div class="story-content">
+                            <blockquote>
+                                "As a first-time mother in Turkana County, I was scared and didn't know where to go for 
+                                prenatal care. HealthConnect showed me when the mobile clinic would visit our area. 
+                                The nurses provided excellent care throughout my pregnancy, and I delivered a healthy baby boy!"
+                            </blockquote>
+                            <div class="story-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Grace Ekiru</h4>
+                                    <p>New Mother, Turkana County</p>
+                                    <div class="story-impact">
+                                        <i class="fas fa-baby"></i>
+                                        <span>Safe delivery</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story 3 - Uganda -->
+                    <div class="featured-story-card" data-country="uganda" data-aos="fade-up" data-aos-delay="300">
+                        <div class="story-header">
+                            <div class="story-country">
+                                <span class="flag">🇺🇬</span>
+                                <span>Uganda</span>
+                            </div>
+                            <div class="story-category vaccination">Vaccination</div>
+                        </div>
+                        <div class="story-content">
+                            <blockquote>
+                                "My three children needed their routine vaccinations, but our nearest health center 
+                                was 50km away. Through HealthConnect, I found out about a mobile clinic visiting our 
+                                village in Gulu. All my children are now fully vaccinated and healthy!"
+                            </blockquote>
+                            <div class="story-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Martha Akello</h4>
+                                    <p>Mother of 3, Gulu District</p>
+                                    <div class="story-impact">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Full vaccination</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Country Stories Grid -->
+        <section class="country-stories-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Stories Across East Africa</h2>
+                
+                <!-- Ethiopia Stories -->
+                <div class="country-section" data-country="ethiopia">
+                    <div class="country-header" data-aos="fade-right">
+                        <div class="country-info">
+                            <span class="flag">🇪🇹</span>
+                            <h3>Ethiopia</h3>
+                            <p>Serving communities across all Ethiopian regions</p>
+                        </div>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <span class="number">32,000+</span>
+                                <span class="label">People Served</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">8</span>
+                                <span class="label">Active Clinics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories-grid">
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="story-meta">
+                                <span class="story-date">March 2024</span>
+                                <span class="story-type">Emergency Care</span>
+                            </div>
+                            <h4>"Quick Response in Amhara Region"</h4>
+                            <p>"When my son fell from a tree and broke his arm, I didn't know where to get help. 
+                            HealthConnect showed me the nearest mobile clinic in Bahir Dar was just 15 minutes away. 
+                            The medical team provided immediate care and arranged transfer to a hospital."</p>
+                            <div class="story-author-mini">
+                                <strong>Tigist Alemu</strong> - Bahir Dar, Amhara
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="story-meta">
+                                <span class="story-date">January 2024</span>
+                                <span class="story-type">Diabetes Care</span>
+                            </div>
+                            <h4>"Managing Diabetes in Rural Tigray"</h4>
+                            <p>"Living with diabetes in a remote area was challenging until I discovered HealthConnect. 
+                            The platform helps me track mobile clinic visits for my regular check-ups and medication refills. 
+                            My blood sugar is now well controlled."</p>
+                            <div class="story-author-mini">
+                                <strong>Gebremedhin Hagos</strong> - Mekelle, Tigray
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="story-meta">
+                                <span class="story-date">December 2024</span>
+                                <span class="story-type">Mental Health</span>
+                            </div>
+                            <h4>"Mental Health Support in Dire Dawa"</h4>
+                            <p>"After losing my job, I was struggling with depression. The mobile clinic team connected 
+                            through HealthConnect provided counseling and connected me with mental health resources. 
+                            I'm now back on my feet and helping others in my community."</p>
+                            <div class="story-author-mini">
+                                <strong>Ahmed Hassan</strong> - Dire Dawa
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kenya Stories -->
+                <div class="country-section" data-country="kenya">
+                    <div class="country-header" data-aos="fade-right">
+                        <div class="country-info">
+                            <span class="flag">🇰🇪</span>
+                            <h3>Kenya</h3>
+                            <p>Reaching urban slums and rural communities</p>
+                        </div>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <span class="number">45,000+</span>
+                                <span class="label">People Served</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">12</span>
+                                <span class="label">Active Clinics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories-grid">
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="story-meta">
+                                <span class="story-date">February 2024</span>
+                                <span class="story-type">Child Health</span>
+                            </div>
+                            <h4>"Malnutrition Recovery in Kibera"</h4>
+                            <p>"My 2-year-old was severely malnourished, but I couldn't afford private healthcare. 
+                            HealthConnect helped me find free nutrition programs through mobile clinics in Kibera. 
+                            Today, my daughter is healthy and thriving!"</p>
+                            <div class="story-author-mini">
+                                <strong>Faith Wanjiru</strong> - Kibera, Nairobi
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="story-meta">
+                                <span class="story-date">April 2024</span>
+                                <span class="story-type">Chronic Disease</span>
+                            </div>
+                            <h4>"HIV Treatment in Kisumu"</h4>
+                            <p>"Accessing HIV treatment in rural Kisumu was difficult until mobile clinics started 
+                            visiting our area. HealthConnect keeps me informed about clinic schedules. I've been 
+                            adherent to my treatment for over a year now."</p>
+                            <div class="story-author-mini">
+                                <strong>Peter Ochieng</strong> - Kisumu County
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="story-meta">
+                                <span class="story-date">May 2024</span>
+                                <span class="story-type">Women's Health</span>
+                            </div>
+                            <h4>"Cervical Cancer Screening in Mombasa"</h4>
+                            <p>"I had never heard of cervical cancer screening until the mobile clinic visited our 
+                            neighborhood. The early screening detected precancerous cells, and I received treatment 
+                            immediately. This platform literally saved my life."</p>
+                            <div class="story-author-mini">
+                                <strong>Fatuma Ali</strong> - Mombasa
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uganda Stories -->
+                <div class="country-section" data-country="uganda">
+                    <div class="country-header" data-aos="fade-right">
+                        <div class="country-info">
+                            <span class="flag">🇺🇬</span>
+                            <h3>Uganda</h3>
+                            <p>Supporting communities from Kampala to rural districts</p>
+                        </div>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <span class="number">28,000+</span>
+                                <span class="label">People Served</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">6</span>
+                                <span class="label">Active Clinics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories-grid">
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="story-meta">
+                                <span class="story-date">March 2024</span>
+                                <span class="story-type">Tuberculosis</span>
+                            </div>
+                            <h4>"TB Treatment Success in Arua"</h4>
+                            <p>"When I was diagnosed with TB, I was scared and didn't know where to get treatment. 
+                            The mobile clinic team found through HealthConnect guided me through the entire treatment 
+                            process. I'm now TB-free and helping others in my community."</p>
+                            <div class="story-author-mini">
+                                <strong>Robert Draga</strong> - Arua District
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="story-meta">
+                                <span class="story-date">June 2024</span>
+                                <span class="story-type">Youth Health</span>
+                            </div>
+                            <h4>"Teen Health Education in Kampala"</h4>
+                            <p>"As a teenager, I had many questions about health that I was too shy to ask. 
+                            The mobile clinic's youth-friendly services advertised on HealthConnect gave me 
+                            a safe space to learn about reproductive health and hygiene."</p>
+                            <div class="story-author-mini">
+                                <strong>Josephine Nabukera</strong> - Kampala
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="story-meta">
+                                <span class="story-date">August 2024</span>
+                                <span class="story-type">Elderly Care</span>
+                            </div>
+                            <h4>"Hypertension Management in Mbale"</h4>
+                            <p>"At 65, managing my high blood pressure was becoming difficult. The mobile clinic 
+                            visits scheduled through HealthConnect ensure I get regular check-ups and medication. 
+                            My blood pressure is now stable."</p>
+                            <div class="story-author-mini">
+                                <strong>John Wamala</strong> - Mbale District
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tanzania Stories -->
+                <div class="country-section" data-country="tanzania">
+                    <div class="country-header" data-aos="fade-right">
+                        <div class="country-info">
+                            <span class="flag">🇹🇿</span>
+                            <h3>Tanzania</h3>
+                            <p>Bridging healthcare gaps from Dar es Salaam to rural regions</p>
+                        </div>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <span class="number">22,000+</span>
+                                <span class="label">People Served</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">5</span>
+                                <span class="label">Active Clinics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories-grid">
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="story-meta">
+                                <span class="story-date">January 2024</span>
+                                <span class="story-type">Malaria Prevention</span>
+                            </div>
+                            <h4>"Malaria Education in Arusha"</h4>
+                            <p>"My family suffered from repeated malaria infections until the mobile clinic team 
+                            educated us about prevention. HealthConnect's health resources section also provided 
+                            valuable tips. We haven't had malaria in our household for 8 months now!"</p>
+                            <div class="story-author-mini">
+                                <strong>Neema Mollel</strong> - Arusha Region
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="story-meta">
+                                <span class="story-date">September 2024</span>
+                                <span class="story-type">Dental Care</span>
+                            </div>
+                            <h4>"First Dental Care in Dodoma"</h4>
+                            <p>"I had never seen a dentist in my 30 years of life until the mobile dental clinic 
+                            advertised on HealthConnect visited our village. They treated my tooth infection and 
+                            taught me proper oral hygiene. Now I have a healthy smile!"</p>
+                            <div class="story-author-mini">
+                                <strong>Hassan Mwalimu</strong> - Dodoma Rural
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rwanda Stories -->
+                <div class="country-section" data-country="rwanda">
+                    <div class="country-header" data-aos="fade-right">
+                        <div class="country-info">
+                            <span class="flag">🇷🇼</span>
+                            <h3>Rwanda</h3>
+                            <p>Enhancing Rwanda's excellent healthcare system</p>
+                        </div>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <span class="number">18,000+</span>
+                                <span class="label">People Served</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">4</span>
+                                <span class="label">Active Clinics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories-grid">
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="story-meta">
+                                <span class="story-date">July 2024</span>
+                                <span class="story-type">Mental Health</span>
+                            </div>
+                            <h4>"PTSD Support in Kigali"</h4>
+                            <p>"As a genocide survivor, I struggled with trauma for years. The mobile mental health 
+                            services coordinated through HealthConnect provided counseling and connected me with 
+                            support groups. I'm finally finding peace."</p>
+                            <div class="story-author-mini">
+                                <strong>Immaculée Uwimana</strong> - Kigali
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="story-meta">
+                                <span class="story-date">October 2024</span>
+                                <span class="story-type">Innovation</span>
+                            </div>
+                            <h4>"Digital Health Records in Musanze"</h4>
+                            <p>"HealthConnect helped digitize our community health records. Now our mobile clinic 
+                            visits are more efficient, and we can track our family's health history easily. 
+                            Technology is truly transforming healthcare in Rwanda."</p>
+                            <div class="story-author-mini">
+                                <strong>Jean-Claude Nzeyimana</strong> - Musanze District
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burundi Stories -->
+                <div class="country-section" data-country="burundi">
+                    <div class="country-header" data-aos="fade-right">
+                        <div class="country-info">
+                            <span class="flag">🇧🇮</span>
+                            <h3>Burundi</h3>
+                            <p>Bringing healthcare to rural communities</p>
+                        </div>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <span class="number">12,000+</span>
+                                <span class="label">People Served</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">3</span>
+                                <span class="label">Active Clinics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories-grid">
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="story-meta">
+                                <span class="story-date">November 2024</span>
+                                <span class="story-type">Maternal Health</span>
+                            </div>
+                            <h4>"Safe Birth in Gitega"</h4>
+                            <p>"I was 8 months pregnant when I found HealthConnect. The platform helped me locate 
+                            a mobile clinic that provided prenatal care and prepared me for delivery. Thanks to 
+                            their guidance, I had a safe delivery at the local health center."</p>
+                            <div class="story-author-mini">
+                                <strong>Esperance Niyongabo</strong> - Gitega Province
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="story-meta">
+                                <span class="story-date">September 2024</span>
+                                <span class="story-type">Nutrition</span>
+                            </div>
+                            <h4>"Fighting Malnutrition in Bururi"</h4>
+                            <p>"My children were underweight and I didn't know how to help them. The mobile clinic's 
+                            nutrition program found through HealthConnect provided supplements and taught me about 
+                            balanced diets. All my children are now growing healthily."</p>
+                            <div class="story-author-mini">
+                                <strong>Claudine Ndikumana</strong> - Bururi Province
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Somalia Stories -->
+                <div class="country-section" data-country="somalia">
+                    <div class="country-header" data-aos="fade-right">
+                        <div class="country-info">
+                            <span class="flag">🇸🇴</span>
+                            <h3>Somalia</h3>
+                            <p>Providing essential healthcare in challenging conditions</p>
+                        </div>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <span class="number">15,000+</span>
+                                <span class="label">People Served</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">4</span>
+                                <span class="label">Active Clinics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories-grid">
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="story-meta">
+                                <span class="story-date">August 2024</span>
+                                <span class="story-type">Emergency Relief</span>
+                            </div>
+                            <h4>"Drought Relief Healthcare in Garowe"</h4>
+                            <p>"During the drought, many children in our community fell sick from dehydration and 
+                            malnutrition. HealthConnect helped coordinate mobile clinic visits that provided 
+                            immediate medical care and nutrition support for our families."</p>
+                            <div class="story-author-mini">
+                                <strong>Amina Farah</strong> - Garowe, Puntland
+                            </div>
+                        </div>
+
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="story-meta">
+                                <span class="story-date">December 2024</span>
+                                <span class="story-type">Vaccination</span>
+                            </div>
+                            <h4>"Polio Vaccination Campaign in Mogadishu"</h4>
+                            <p>"When the polio vaccination campaign was announced, I used HealthConnect to find 
+                            the nearest vaccination point for my children. The platform made it easy to ensure 
+                            all my kids were protected against polio."</p>
+                            <div class="story-author-mini">
+                                <strong>Omar Jama</strong> - Mogadishu
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- South Sudan Stories -->
+                <div class="country-section" data-country="south-sudan">
+                    <div class="country-header" data-aos="fade-right">
+                        <div class="country-info">
+                            <span class="flag">🇸🇸</span>
+                            <h3>South Sudan</h3>
+                            <p>Healthcare access in post-conflict recovery</p>
+                        </div>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <span class="number">8,000+</span>
+                                <span class="label">People Served</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">2</span>
+                                <span class="label">Active Clinics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories-grid">
+                        <div class="story-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="story-meta">
+                                <span class="story-date">October 2024</span>
+                                <span class="story-type">Trauma Care</span>
+                            </div>
+                            <h4>"Healing from Conflict in Juba"</h4>
+                            <p>"The mobile clinic team reached our IDP camp through HealthConnect coordination. 
+                            They treated my war injuries and provided psychological support. For the first time 
+                            in years, I have hope for recovery and a normal life."</p>
+                            <div class="story-author-mini">
+                                <strong>Mary Achol</strong> - Juba, Central Equatoria
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Statistics -->
+        <section class="stories-impact">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Stories of Impact</h2>
+                <div class="impact-grid">
+                    <div class="impact-metric" data-aos="fade-up" data-aos-delay="100">
+                        <div class="metric-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="metric-number" data-target="150000">0</div>
+                        <div class="metric-label">Lives Improved</div>
+                        <div class="metric-description">Across 8 East African countries</div>
+                    </div>
+
+                    <div class="impact-metric" data-aos="fade-up" data-aos-delay="200">
+                        <div class="metric-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="metric-number" data-target="2800">0</div>
+                        <div class="metric-label">Safe Deliveries</div>
+                        <div class="metric-description">Mothers and babies protected</div>
+                    </div>
+
+                    <div class="impact-metric" data-aos="fade-up" data-aos-delay="300">
+                        <div class="metric-icon">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <div class="metric-number" data-target="45000">0</div>
+                        <div class="metric-label">Vaccinations Given</div>
+                        <div class="metric-description">Preventing disease outbreaks</div>
+                    </div>
+
+                    <div class="impact-metric" data-aos="fade-up" data-aos-delay="400">
+                        <div class="metric-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="metric-number" data-target="78000">0</div>
+                        <div class="metric-label">Health Education</div>
+                        <div class="metric-description">People educated about health</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Share Your Story Section -->
+        <section class="share-story-section">
+            <div class="container">
+                <div class="share-story-content" data-aos="fade-up">
+                    <div class="share-story-text">
+                        <h2>Share Your Story</h2>
+                        <p>Has HealthConnect made a difference in your life or your community? We'd love to hear from you! 
+                        Your story could inspire others and help us improve our services.</p>
+                        <ul class="story-guidelines">
+                            <li>Tell us how mobile health clinics helped you or your family</li>
+                            <li>Share the impact on your community</li>
+                            <li>Describe how the platform made healthcare more accessible</li>
+                            <li>Inspire others with your health journey</li>
+                        </ul>
+                    </div>
+                    <div class="share-story-form">
+                        <form id="story-submission-form" class="story-form">
+                            <h3>Submit Your Story</h3>
+                            <div class="form-group">
+                                <label for="story-name">Your Name</label>
+                                <input type="text" id="story-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="story-location">Location (City, Country)</label>
+                                <input type="text" id="story-location" name="location" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="story-category">Story Category</label>
+                                <select id="story-category" name="category" required>
+                                    <option value="">Select category</option>
+                                    <option value="emergency">Emergency Care</option>
+                                    <option value="maternal">Maternal Health</option>
+                                    <option value="child">Child Health</option>
+                                    <option value="vaccination">Vaccination</option>
+                                    <option value="chronic">Chronic Disease</option>
+                                    <option value="mental">Mental Health</option>
+                                    <option value="education">Health Education</option>
+                                    <option value="prevention">Disease Prevention</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="story-content">Your Story</label>
+                                <textarea id="story-content" name="story" rows="6" required 
+                                    placeholder="Tell us your story... How did HealthConnect help you or your community?"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="consent" required>
+                                    I consent to sharing my story publicly to inspire others and improve healthcare access
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Story
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="stories-cta">
+            <div class="container">
+                <div class="cta-content" data-aos="fade-up">
+                    <h2>Be Part of Our Story</h2>
+                    <p>Join thousands of East Africans who are transforming healthcare access in their communities.</p>
+                    <div class="cta-buttons">
+                        <a href="appointment-booking.html" class="btn btn-primary">
+                            <i class="fas fa-calendar-plus"></i>
+                            Book Your Appointment
+                        </a>
+                        <a href="clinic-locations.html" class="btn btn-secondary">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Find Clinics Near You
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Bridging healthcare accessibility gaps in remote and underserved communities 
+                        through technology and mobile health solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/melkamu-wako-536174318/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/melke27" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://melkamuwako27.netlify.app/" target="_blank" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+                        <a href="https://t.me/kidn16" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/ruf.2316/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@MelkamuWako-f3v" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="mailto:melkamuwako5@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="clinic-locations.html">Find Clinics</a></li>
+                        <li><a href="health-resources.html">Health Resources</a></li>
+                        <li><a href="appointment-booking.html">Book Appointment</a></li>
+                        <li><a href="community-stories.html">Community Stories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Health Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="health-resources.html#prevention">Disease Prevention</a></li>
+                        <li><a href="health-resources.html#maternal">Maternal Health</a></li>
+                        <li><a href="health-resources.html#child">Child Health</a></li>
+                        <li><a href="health-resources.html#emergency">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Get Updates</h4>
+                    <p>Stay informed about mobile clinic schedules and health tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 HealthConnect. All rights reserved. | 
+                       <a href="#privacy">Privacy Policy</a> | 
+                       <a href="#terms">Terms of Service</a>
+                    </p>
+                    <div class="developer-credit">
+                        <p>Developed by <a href="https://melkamuwako27.netlify.app/" target="_blank" class="developer-link">
+                            <i class="fas fa-code"></i> Melkamu Wako
+                        </a> - Computer Science Student at ASTU</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/community-stories.js"></script>
+</body>
+</html>

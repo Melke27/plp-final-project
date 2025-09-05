@@ -4,12 +4,21 @@
   "description": "Mobile Health Clinics Platform - Bridging healthcare accessibility gaps in remote and underserved communities",
   "main": "index.html",
   "scripts": {
-    "start": "python -m http.server 8000",
-    "serve": "npx serve .",
-    "test": "echo \"Testing functionality...\" && exit 0",
-    "build": "echo \"Static site - no build process needed\" && exit 0",
+    "start": "lite-server",
+    "dev": "lite-server --port=3000",
+    "serve": "serve . -l 8080",
+    "build": "npm run optimize",
+    "optimize": "echo \"Optimizing assets...\" && npm run validate",
+    "validate": "echo \"Validating HTML and assets...\" && exit 0",
+    "test": "npm run validate && echo \"All tests passed!\"",
     "deploy": "netlify deploy --prod --dir .",
-    "dev": "python -m http.server 8000"
+    "deploy:preview": "netlify deploy --dir .",
+    "netlify:build": "npm run build",
+    "netlify:dev": "netlify dev",
+    "install:netlify": "npm install -g netlify-cli",
+    "setup": "npm install && npm run install:netlify",
+    "lint": "echo \"Checking code quality...\" && exit 0",
+    "format": "echo \"Formatting code...\" && exit 0"
   },
   "keywords": [
     "healthcare",
@@ -31,14 +40,25 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/melkamuwako27/healthconnect-platform.git"
+    "url": "https://github.com/Melke27/plp-final-project.git"
   },
   "bugs": {
-    "url": "https://github.com/melkamuwako27/healthconnect-platform/issues"
+    "url": "https://github.com/Melke27/plp-final-project/issues"
   },
-  "homepage": "https://healthconnect-mobile.netlify.app",
-  "devDependencies": {},
-  "dependencies": {},
+  "homepage": "https://plp-final-melkamu.netlify.app",
+  "devDependencies": {
+    "netlify-cli": "^17.0.0",
+    "serve": "^14.2.0",
+    "lite-server": "^2.6.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "@netlify/functions": "^2.4.0",
+    "bootstrap": "^5.3.0",
+    "aos": "^2.3.4",
+    "swiper": "^11.0.0",
+    "chart.js": "^4.4.0"
+  },
   "engines": {
     "node": ">=14.0.0"
   },

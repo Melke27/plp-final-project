@@ -240,6 +240,7 @@ a:hover {
     display: none;
     list-style: none;
     gap: var(--spacing-lg);
+    transition: all var(--transition-normal);
 }
 
 .nav-link {
